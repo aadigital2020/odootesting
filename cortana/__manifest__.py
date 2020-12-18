@@ -2,13 +2,9 @@
 {
     'name': "Cortana",
 
-    'summary': """
-        Cortana
-    """,
+    'summary': """Cortana""",
 
-    'description': """
-        Cortana
-    """,
+    'description': """Cortana""",
 
     'author': "A&A Limited",
     'website': "http://www.aa-limited.com",
