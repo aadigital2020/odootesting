@@ -1,3 +1,5 @@
 $(function() {
-    alert('Hello from Cortana');
+    $(document).ajaxComplete(function() {
+        console.log('Ajax call completed');
+    });
 });
