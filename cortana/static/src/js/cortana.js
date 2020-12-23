@@ -26,13 +26,13 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             });
 
             // URL Actions
-            var self = this;
-            var action = {
-                type: 'ir.actions.act_url',
-                url: '/cortana/cortana/export',
-                target: '_blank',
-            };
-            return this.do_action(action);
+            // var self = this;
+            // var action = {
+            //     type: 'ir.actions.act_url',
+            //     url: '/cortana/cortana/export',
+            //     target: '_blank',
+            // };
+            // return this.do_action(action);
 
             // var self = this;
             // var action = {
