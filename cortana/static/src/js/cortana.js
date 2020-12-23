@@ -1,9 +1,3 @@
-$(function() {
-    $(document).ajaxComplete(function() {
-        console.log('Ajax call completed');
-    });
-});
-
 odoo.define('cortana__export_button.listview_button', function (require) {
     'use strict';
 
