@@ -3,14 +3,11 @@ from odoo import http
 import json
 
 class Cortana(http.Controller):
-    @http.route('/cortana/cortana/test', type='http', auth='user')
+    @http.route('/cortana/cortana/test', type='json', auth='user')
     def test(self, **kw):
         results = self.env['x_this_is_tour_123'].search([]) # Change model name
         data = json.dumps(results)
-        return http.request.make_response(data, [
-            ('Content-disposition', 'attachment; filename=export.json'),
-            ('Content-Type', 'application/json'),
-        ])
+        return data
 
     @http.route('/cortana/cortana/export', type='http', auth='user')
     def export(self, **kw):
