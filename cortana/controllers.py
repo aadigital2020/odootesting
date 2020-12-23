@@ -10,6 +10,8 @@ class Cortana(http.Controller):
         # for model in models:
         #     results = model.read()
 
+        return print(models)
+
         data = json.dumps(models)
         # return len(models)
 
