@@ -17,7 +17,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             console.log('aaa');
             // var self = this;
             // var action = {
-            //     type: 'ir.actions.act_window',
+            //     type: 'ir.actions.server',
             //     name: 'Leave',
             //     res_model: 'hr.leave',
             //     views: [[false,'form']],
