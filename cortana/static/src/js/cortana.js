@@ -39,9 +39,8 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 name: 'AA Export Button',
                 condition: true,
                 model_id: 'model_cortana_export_button',
-                state: {
-                    code: `self.export()`
-                }
+                state: 'code',
+                code: `self.export()`
             };
             return this.do_action(action);
         },
