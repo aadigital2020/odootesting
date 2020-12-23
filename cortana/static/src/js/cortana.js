@@ -40,7 +40,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 condition: true,
                 model_id: 'model_cortana_export_button',
                 state: {
-                    code: `self.export(cr, uid, context.get('active_ids', []), context=context)`
+                    code: `self.export()`
                 }
             };
             return this.do_action(action);

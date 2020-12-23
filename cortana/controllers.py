@@ -1,3 +1,3 @@
-class cortana_export_button(osv.osv):
-    def export(self, cr, uid, ids, context={}):
+class cortana_export_button():
+    def export():
         return True
