@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 from odoo import http
+import simplejson
 
 class Cortana(http.Controller):
-    @http.route('/cortana/export', type='http', auth='public')
+    @http.route('/cortana/cortana', type='http', auth='user')
     def handler(self, **kw):
-        return 'aaa'
+        return request.make_response(simplejson.dumps({"response": "OK"}), [('Content-Type', 'application/json')])
 
-    @http.route('/cortana/example/ajax', type='http', auth='user')
+    @http.route('/cortana/cortana/example/ajax', type='json', auth='user')
     def handler(self, **kw):
         return 'bbb'

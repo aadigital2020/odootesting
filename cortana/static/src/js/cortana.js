@@ -16,7 +16,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
         action: function() {
             // Call Ajax
             var ajax = require('web.ajax');
-            ajax.jsonRpc('/cortana/example/ajax', 'call', {}).then(function(data) {
+            ajax.jsonRpc('/cortana/cortana/example/ajax', 'call', {}).then(function(data) {
                 console.log(data);
             });
 
@@ -24,7 +24,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             var self = this;
             var action = {
                 type: 'ir.actions.act_url',
-                url: '/cortana/export',
+                url: '/cortana/cortana/export',
                 target: '_blank',
             };
             return this.do_action(action);
