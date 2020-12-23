@@ -6,7 +6,13 @@ class Cortana(http.Controller):
     @http.route('/cortana/cortana/test', type='json', auth='user')
     def test(self, **kw):
         results = http.request.env['x_this_is_tour_123'].search([]) # Change model name
-        return len(results)
+        
+        obj = []
+        for result in results:
+            obj = result
+
+        data = json.dumps(obj)
+        # return len(results)
 
     @http.route('/cortana/cortana/export', type='http', auth='user')
     def export(self, **kw):
