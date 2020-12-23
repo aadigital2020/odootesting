@@ -5,14 +5,13 @@ import json
 class Cortana(http.Controller):
     @http.route('/cortana/cortana/test', type='json', auth='user')
     def test(self, **kw):
-        results = http.request.env['x_this_is_tour_123'].search([]) # Change model name
+        models = http.request.env['x_this_is_tour_123'].search([]) # Change model name
         
-        obj = []
-        for result in results:
-            obj = result
+        for model in models:
+            results = model.read()
 
-        data = json.dumps(obj)
-        # return len(results)
+        data = json.dumps(results)
+        # return len(models)
 
     @http.route('/cortana/cortana/export', type='http', auth='user')
     def export(self, **kw):
