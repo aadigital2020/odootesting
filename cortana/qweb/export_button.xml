@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<templates id="qweb__export_button" xml:space="preserve">
+<templates id="cortana_qweb__template__export_button" xml:space="preserve">
     <t t-extend="ListView.buttons">
         <t t-jquery="div.o_list_buttons" t-operation="append">
             <t t-if = "widget.modelName == 'x_this_is_tour_123'">
-                <button type="button" class="btn btn-primary o_crete_leave_from_summary">
-                    Test Button
-                </button>
+                <div class="btn-group o_dropdown cortana_qweb__layout__export_button">
+                    <button type="button" aria-expanded="true" tabindex="-1" class="o_dropdown_toggler_btn btn btn-secondary">
+                        <i class="fa fa-filter"></i><span class="o_dropdown_title">篩選</span>
+                    </button>
+                    <ul role="menu" class="o_dropdown_menu dropdown-menu">
+                        <li role="menuitem" class="o_menu_item"><a aria-checked="false" role="menuitemcheckbox" href="#" class="dropdown-item">封存</a></li>
+                        <li role="menuitem" class="o_menu_item"><a aria-checked="false" role="menuitemcheckbox" href="#" class="dropdown-item">封存</a></li>
+                    </ul>
+                </div>
             </t>
         </t>
     </t>
