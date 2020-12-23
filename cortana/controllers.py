@@ -6,6 +6,6 @@ class Cortana(http.Controller):
     def handler(self, **kw):
         return 'aaa'
 
-    @http.route('/cortana/example/ajax', type='json', auth='user')
+    @http.route('/cortana/example/ajax', type='http', auth='user')
     def handler(self, **kw):
         return 'bbb'
