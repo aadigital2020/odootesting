@@ -5,7 +5,7 @@ import json
 class Cortana(http.Controller):
     @http.route('/cortana/cortana/export', type='http', auth='user')
     def export(self, **kw):
-        request.make_response(
+        return http.request.make_response(
             json.dumps({
                 'name': 'John',
                 'age': 30,
