@@ -23,7 +23,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             var ajax = require('web.ajax');
             ajax.jsonRpc('/cortana/export', 'call', {}).then(function(data) {
                 console.log(data);
-                const url = window.URL.createObjectURL(blob);
+                const url = window.URL.createObjectURL(data);
                 const a = document.createElement('a');
                 a.style.display = 'none';
                 a.href = url;
