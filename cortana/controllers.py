@@ -2,12 +2,12 @@
 from odoo import http
 
 class Cortana(http.Controller):
-    @http.route('/cortana/cortana/check', type='http', auth='user')
-    def handler(self, **kw):
+    @http.route('/cortana/cortana/export', type='http', auth='user')
+    def export(self, **kw):
         return {
             'test' : 'test'
         }
 
     @http.route('/cortana/cortana/example/ajax', type='json', auth='user')
-    def handler(self, **kw):
+    def ajax(self, **kw):
         return 'bbb'
