@@ -4,7 +4,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
     var core = require('web.core');
     var ListView = require('web.ListView');
     var ListController = require('web.ListController');
-    console.log('hi');
+    
     var IncludeListView = {
         renderButtons: function() {
             this._super.apply(this, arguments);
