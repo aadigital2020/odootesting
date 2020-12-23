@@ -2,7 +2,7 @@
 from odoo import http
 
 class Cortana(http.Controller):
-    @http.route('/cortana/export', type='http', auth='user', website=True)
+    @http.route('/cortana/export', type='http', auth='user', csrf=False)
     def handler(self, **kw):
         return 'aaa'
 
