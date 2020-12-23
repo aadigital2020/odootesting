@@ -20,6 +20,11 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             }
         },
         action: function() {
+            var ajax = require('web.ajax');
+            ajax.jsonRpc('/cortana/export_button', 'call', {}).then(function(data) {
+                console.log(data);
+            });
+
             // var self = this;
             // var action = {
             //     type: 'ir.actions.act_window',
@@ -33,16 +38,6 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             //     flags: {'form': {'action_buttons': true, 'options': {'mode': 'edit'}}}
             // };
             // return this.do_action(action);
-            var self = this;
-            var action = {
-                type: 'ir.actions.server',
-                name: 'AA Export Button',
-                condition: true,
-                model_id: 'model_cortana_export_button',
-                state: 'code',
-                code: `self.export()`
-            };
-            return this.do_action(action);
         },
     };
     ListController.include(IncludeListView);
