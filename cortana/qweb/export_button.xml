@@ -3,15 +3,9 @@
     <t t-extend="ListView.buttons">
         <t t-jquery="div.o_list_buttons" t-operation="append">
             <t t-if = "widget.modelName == 'x_this_is_tour_123'">
-                <div class="btn-group o_dropdown cortana_qweb__layout__export_button">
-                    <button type="button" aria-expanded="true" tabindex="-1" class="o_dropdown_toggler_btn btn btn-secondary">
-                        <i class="fa fa-filter"></i><span class="o_dropdown_title">篩選</span>
-                    </button>
-                    <ul role="menu" class="o_dropdown_menu dropdown-menu">
-                        <li role="menuitem" class="o_menu_item"><a aria-checked="false" role="menuitemcheckbox" href="#" class="dropdown-item">封存</a></li>
-                        <li role="menuitem" class="o_menu_item"><a aria-checked="false" role="menuitemcheckbox" href="#" class="dropdown-item">封存</a></li>
-                    </ul>
-                </div>
+                <button type="button" class="btn btn-primary cortana_qweb__layout__export_button">
+                    Export Button
+                </button>
             </t>
         </t>
     </t>
