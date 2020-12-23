@@ -1,12 +1,16 @@
 # -*- coding: utf-8 -*-
 from odoo import http
-import simplejson
+import json
 
 class Cortana(http.Controller):
     @http.route('/cortana/cortana/export', type='http', auth='user')
     def export(self, **kw):
         request.make_response(
-            simplejson.dumps({'response': 'OK'}),
+            json.dumps({
+                'name': 'John',
+                'age': 30,
+                'city': 'New York'
+            }),
             [('Content-Type', 'application/json'),
         ])
 
