@@ -6,6 +6,10 @@ class Cortana(http.Controller):
     @http.route('/cortana/cortana/test', type='json', auth='user')
     def test(self, **kw):
         models = http.request.env['x_this_is_tour_123'].search([]) # Change model name
+
+        raw_data = models.read()
+        json_data = json.dumps(raw_data, default=date_utils.json_default)
+        return print(json_data)
         
         # for model in models:
         #     results = model.read()
