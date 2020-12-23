@@ -16,5 +16,6 @@
 
     'data': [
         'views/assets.xml',
+        'views/export_button.xml',
     ],
 }
