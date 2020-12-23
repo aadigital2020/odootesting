@@ -16,6 +16,9 @@
 
     'data': [
         'views/assets.xml',
-        'views/export_button.xml',
+    ],
+
+    'qweb': [
+        'qweb/export_button.xml',
     ],
 }
