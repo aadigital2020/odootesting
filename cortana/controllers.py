@@ -1,4 +1,7 @@
-class MyController(odoo.http.Controller):
-    @route('/cortana/export_button', type='http', auth='user')
-    def handler(self):
-        return 'test test'
+# -*- coding: utf-8 -*-
+from odoo import http
+
+class Cortana(http.Controller):
+    @http.route('/cortana/export/', auth='public')
+    def handler(self, **kw):
+        return 'Hello, world'
