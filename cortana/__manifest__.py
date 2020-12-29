@@ -2,15 +2,15 @@
 {
     'name': "Cortana",
 
-    'summary': """Cortana2""",
+    'summary': """Cortana""",
 
-    'description': """Cortana2""",
+    'description': """Cortana""",
 
     'author': "A&A Limited",
     'website': "http://www.aa-limited.com",
 
     'category': 'Test',
-    'version': '0.2',
+    'version': '0.3',
 
     'depends': ['base', 'web'],
 
