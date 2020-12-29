@@ -10,6 +10,17 @@ class Cortana(http.Controller):
         # Print models
         raw_data = models.read()
         return raw_data
+
+    @http.route('/cortana/cortana/export2', type='http', auth='user')
+    def export2(self, **kw):
+        models = http.request.env['x_this_is_tour_123'].search([]) # Change model name
+
+        # Download PDF
+        pdf = 'abc'
+        headers = [
+            ('Content-Type', 'application/pdf'),
+            ('Content-Length', len(pdf)),
+        return http.request.make_response(pdf, headers=headers)
     
     @http.route('/cortana/cortana/download_json', type='http', auth='user')
     def download_json(self, **kw):
