@@ -10,13 +10,17 @@
     'website': "http://www.aa-limited.com",
 
     'category': 'Test',
-    'version': '0.4',
+    'version': '0.5',
 
     'depends': ['base', 'web'],
 
     'data': [
         'views/assets.xml',
     ],
+
+    'external_dependencies': {
+        'python' : ['pdfkit'],
+    },
 
     'qweb': [
         'qweb/export_button.xml',
