@@ -8,7 +8,7 @@ class Cortana(http.Controller):
         models = http.request.env['x_this_is_tour_123'].search([]) # Change model name
 
         raw_data = models.read()
-        json_data = json.dumps(raw_data)
+        json_data = json.dumps(raw_data, indent=4, sort_keys=True, default=str)
         return print(json_data)
         
         # for model in models:
