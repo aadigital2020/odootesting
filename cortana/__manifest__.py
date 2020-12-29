@@ -10,7 +10,7 @@
     'website': "http://www.aa-limited.com",
 
     'category': 'Test',
-    'version': '0.6',
+    'version': '0.7',
 
     'depends': ['base', 'web'],
 
@@ -19,7 +19,7 @@
     ],
 
     'external_dependencies': {
-        'python' : ['pdfkit'],
+        'python' : ['python3-wkhtmltopdf'],
     },
 
     'qweb': [
