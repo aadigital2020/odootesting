@@ -19,7 +19,7 @@
     ],
 
     'external_dependencies': {
-        'python' : ['python3-wkhtmltopdf'],
+        'python' : [],
     },
 
     'qweb': [

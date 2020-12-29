@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from odoo import http
-from wkhtmltopdf import wkhtmltopdf
 import json
 
 class Cortana(http.Controller):
@@ -16,11 +15,11 @@ class Cortana(http.Controller):
     def export2(self, **kw):
         models = http.request.env['x_this_is_tour_123'].search([]) # Change model name
 
-        wkhtmltopdf = WKHtmlToPdf(
-            url='https://www.google.com',
-            output_file='~/example.pdf',
-        )
-        wkhtmltopdf.render()
+        # wkhtmltopdf = WKHtmlToPdf(
+        #     url='https://www.google.com',
+        #     output_file='~/example.pdf',
+        # )
+        # wkhtmltopdf.render()
 
         # Download PDF
         # pdf = 'abc'
