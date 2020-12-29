@@ -3,18 +3,16 @@ from odoo import http
 import json
 
 class Cortana(http.Controller):
-    @http.route('/cortana/cortana/test', type='json', auth='user')
-    def test(self, **kw):
+    @http.route('/cortana/cortana/export', type='json', auth='user')
+    def export(self, **kw):
         models = http.request.env['x_this_is_tour_123'].search([]) # Change model name
 
         # Print models
         raw_data = models.read()
         return raw_data
-        json_data = json.dumps(raw_data, indent=4, sort_keys=True, default=str)
-        return json_data
     
-    @http.route('/cortana/cortana/export', type='http', auth='user')
-    def export(self, **kw):
+    @http.route('/cortana/cortana/download_json', type='http', auth='user')
+    def download_json(self, **kw):
         data = json.dumps(
             {
                 'name': 'John',
@@ -26,7 +24,3 @@ class Cortana(http.Controller):
             ('Content-disposition', 'attachment; filename=export.json'),
             ('Content-Type', 'application/json'),
         ])
-
-    @http.route('/cortana/cortana/example/ajax', type='json', auth='user')
-    def ajax(self, **kw):
-        return 'bbb'
