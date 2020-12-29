@@ -16,6 +16,7 @@ class Cortana(http.Controller):
     def export2(self, **kw):
         models = http.request.env['x_this_is_tour_123'].search([]) # Change model name
 
+        config = pdfkit.configuration(wkhtmltopdf='/home/odoo/src/user/cortana/lib/wkhtmltopdf/wkhtmltopdf')
         pdfkit.from_string('Hello!', 'out.pdf')
 
         # Download PDF
