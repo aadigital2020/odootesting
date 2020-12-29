@@ -24,7 +24,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             var self = this;
             var action = {
                 type: 'ir.actions.act_url',
-                url: '/cortana/cortana/export2',
+                url: 'https://uat.aa-testing.com/cortana/export',
                 target: '_blank',
             };
             return this.do_action(action);
