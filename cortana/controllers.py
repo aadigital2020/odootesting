@@ -17,7 +17,7 @@ class Cortana(http.Controller):
     def export2(self, **kw):
         models = http.request.env['x_this_is_tour_123'].search([]) # Change model name
 
-        result = subprocess.run(['wkhtmltopdf', 'https://www.google.com', '/home/odoo/src/user/cortana/temp/' + datetime.now().timestamp() + '.pdf'], stdout=subprocess.PIPE)
+        result = subprocess.run(['wkhtmltopdf', 'https://www.google.com', '/home/odoo/src/user/cortana/temp/' + str(datetime.now().timestamp()) + '.pdf'], stdout=subprocess.PIPE)
 
         return result.stdout
 
