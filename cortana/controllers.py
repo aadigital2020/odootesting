@@ -9,9 +9,7 @@ class Cortana(http.Controller):
 
         raw_data = models.read()
         json_data = json.dumps(raw_data, indent=4, sort_keys=True, default=str)
-        return http.request.make_response(json_data, [
-            ('Content-Type', 'application/json'),
-        ])
+        return json_data
         
         # for model in models:
         #     results = model.read()
