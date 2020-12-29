@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import http
+import subprocess
+from datetime import datetime
 import json
 
 class Cortana(http.Controller):
@@ -14,6 +16,10 @@ class Cortana(http.Controller):
     @http.route('/cortana/cortana/export2', type='http', auth='user')
     def export2(self, **kw):
         models = http.request.env['x_this_is_tour_123'].search([]) # Change model name
+
+        result = subprocess.run(['wkhtmltopdf', 'https://www.google.com', '/home/odoo/src/user/cortana/temp/' + datetime.now().timestamp() + '.pdf'], stdout=subprocess.PIPE)
+
+        return result.stdout
 
         # wkhtmltopdf = WKHtmlToPdf(
         #     url='https://www.google.com',
