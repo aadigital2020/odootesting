@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import http
+import pdfkit
 import json
 
 class Cortana(http.Controller):
@@ -15,13 +16,15 @@ class Cortana(http.Controller):
     def export2(self, **kw):
         models = http.request.env['x_this_is_tour_123'].search([]) # Change model name
 
+        pdfkit.from_string('Hello!', 'out.pdf')
+
         # Download PDF
-        pdf = 'abc'
-        headers = [
-            ('Content-Type', 'application/pdf'),
-            ('Content-Length', len(pdf))
-        ]
-        return http.request.make_response(pdf, headers=headers)
+        # pdf = 'abc'
+        # headers = [
+        #     ('Content-Type', 'application/pdf'),
+        #     ('Content-Length', len(pdf))
+        # ]
+        # return http.request.make_response(pdf, headers=headers)
     
     @http.route('/cortana/cortana/download_json', type='http', auth='user')
     def download_json(self, **kw):
