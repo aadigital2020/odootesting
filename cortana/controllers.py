@@ -19,7 +19,8 @@ class Cortana(http.Controller):
         pdf = 'abc'
         headers = [
             ('Content-Type', 'application/pdf'),
-            ('Content-Length', len(pdf)),
+            ('Content-Length', len(pdf))
+        ]
         return http.request.make_response(pdf, headers=headers)
     
     @http.route('/cortana/cortana/download_json', type='http', auth='user')
