@@ -4,6 +4,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
     var core = require('web.core');
     var ListView = require('web.ListView');
     var ListRenderer = require('web.ListRenderer');
+    var ListModel = require('web.ListModel');
     var ListController = require('web.ListController');
     
     // ListView.include({
@@ -15,17 +16,25 @@ odoo.define('cortana__export_button.listview_button', function (require) {
     //     }
     // })
 
-    ListRenderer.include({
-        init: function() {
-            this._super.apply(this, arguments);
-            console.log('init');
-            console.log(this.arch.children);
-        },
-        updateState: function() {
-            console.log('updateState');
-            console.log(this.arch.children);
-            return this._super.apply(this, arguments);
-        },
+    // ListRenderer.include({
+    //     init: function() {
+    //         this._super.apply(this, arguments);
+    //         console.log('init');
+    //         console.log(this.arch.children);
+    //     },
+    //     updateState: function() {
+    //         console.log('updateState');
+    //         console.log(this.arch.children);
+    //         return this._super.apply(this, arguments);
+    //     },
+    // })
+
+    ListModel.include({
+        __get: function() {
+            result = this._super.apply(this, arguments);
+            console.log(result);
+            return result;
+        }
     })
 
     ListController.include({
