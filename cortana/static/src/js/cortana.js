@@ -10,13 +10,10 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             this._super.apply(this, arguments);
             if (this.modelName === 'x_this_is_tour_123') { // Change model name
                 var button = this.$buttons.find('button.cortana__export_button__button'); // Change button class
-                button.on('click', this.proxy('export_action'))
-            }
-            if (this.$buttons) {
-                this.$buttons.find('.cortana-preview').on('click', this.proxy('button_action'))
+                button.on('click', this.proxy('action'))
             }
         },
-        export_action: function() {
+        action: function() {
             // Call Ajax
             // var ajax = require('web.ajax');
             // ajax.jsonRpc('/cortana/cortana/export', 'call', {}).then(function(data) {
@@ -52,4 +49,16 @@ odoo.define('cortana__export_button.listview_button', function (require) {
         },
     };
     ListController.include(IncludeListView);
+
+    ListView.include({
+        render_buttons: function() {
+            this._super.apply(this, arguments)
+            if (this.$buttons) {
+                this.$buttons.find('.cortana-preview').on('click', this.proxy('action'))
+            }
+        },
+        action: function () {
+            alert('qqqq')
+        }
+    })
 });
