@@ -18,8 +18,19 @@ odoo.define('cortana__export_button.listview_button', function (require) {
     ListRenderer.include({
         init: function() {
             this._super.apply(this, arguments);
+            console.log('init');
             console.log(this);
-        }
+        },
+        giveFocus: function() {
+            this._super.apply(this, arguments);
+            console.log('giveFocus');
+            console.log(this);
+        },
+        updateState: function() {
+            this._super.apply(this, arguments);
+            console.log('updateState');
+            console.log(this);
+        },
     })
 
     ListController.include({
