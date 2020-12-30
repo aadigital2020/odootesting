@@ -22,9 +22,9 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             console.log(this.arch.children);
         },
         updateState: function() {
-            this._super.apply(this, arguments);
             console.log('updateState');
             console.log(this.arch.children);
+            return this._super.apply(this, arguments);
         },
     })
 
