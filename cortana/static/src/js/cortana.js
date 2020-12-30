@@ -53,11 +53,3 @@ odoo.define('cortana__export_button.listview_button', function (require) {
     };
     ListController.include(IncludeListView);
 });
-
-$(function() {
-    $('body').on('click', '.cortana-preview', function(e) {
-        e.preventDefault();
-
-
-    })
-});
