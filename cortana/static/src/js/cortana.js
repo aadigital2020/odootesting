@@ -32,12 +32,11 @@ odoo.define('cortana__export_button.listview_button', function (require) {
     ListModel.include({
         __get: function() {
             var result = this._super.apply(this, arguments);
-            if (typeof result === 'object') {
-                console.log(typeof result);
+            if (result.hasOwnProperty('id')) {
                 console.log(result);
-                // console.log(result.id);
-                // console.log(result.data.id);
-                // $('[data-id="' + result.id + '"]').attr('data-model-id', result.data.id);
+                console.log(result.id);
+                console.log(result.data.id);
+                $('[data-id="' + result.id + '"]').attr('data-model-id', result.data.id);
             }
             return result;
         }
