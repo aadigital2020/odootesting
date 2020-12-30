@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<templates id="cortana__today_search" xml:space="preserve">
-    <t t-inherit="sale.order.list.select" t-inherit-mode="extension">
-        <xpath expr="//filter[last()]" position="after">
-            <filter string="Today" domain="[('state','=',time.strftime('%Y-%m-%d'))]" help="Today"/>
-        </xpath>
-    </t>
-</templates>

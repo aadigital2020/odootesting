@@ -24,6 +24,5 @@
 
     'qweb': [
         'qweb/export_button.xml',
-        'qweb/today_search.xml',
     ],
 }

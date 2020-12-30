@@ -1,7 +1,12 @@
 <odoo>
-    <template id="assets_common" inherit_id="web.assets_common">
+    <template id="cortana_web_assets_common" inherit_id="web.assets_common">
         <xpath expr="//script[last()]" position="after">
             <script type="text/javascript" src="/cortana/static/src/js/cortana.js"/>
+        </xpath>
+    </template>
+    <template id="cortana_sale_order_list_select" inherit_id="sale.order.list.select">
+        <xpath expr="//filter[last()]" position="after">
+            <filter string="Today" domain="[('state','=',time.strftime('%Y-%m-%d'))]" help="Today"/>
         </xpath>
     </template>
 </odoo>
