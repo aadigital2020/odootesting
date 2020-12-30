@@ -3,10 +3,9 @@
         <field name="name">cortana.sale.order.list.select</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_sales_order_filter"/>
-        <field name="mode">extension</field>
         <field name="arch" type="xml">
            <xpath expr="//filter[last()]" position="after">
-                <filter string="Today" domain="[('state','=',time.strftime('%Y-%m-%d'))]" help="Today"/>
+                <filter string="To Invoice" domain="[('invoice_status','=','to invoice')]" />
             </xpath>
         </field>
     </record>
