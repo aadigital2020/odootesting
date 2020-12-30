@@ -3,14 +3,22 @@ odoo.define('cortana__export_button.listview_button', function (require) {
 
     var core = require('web.core');
     var ListView = require('web.ListView');
+    var ListRenderer = require('web.ListRenderer');
     var ListController = require('web.ListController');
     
-    ListView.include({
+    // ListView.include({
+    //     init: function() {
+    //         this._super.apply(this, arguments);
+    //         this.arch.children.forEach(function (child) {
+    //             console.log(child);
+    //         });
+    //     }
+    // })
+
+    ListRenderer.include({
         init: function() {
             this._super.apply(this, arguments);
-            this.arch.children.forEach(function (child) {
-                console.log(child);
-            });
+            console.log(this);
         }
     })
 
