@@ -34,6 +34,8 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             var result = this._super.apply(this, arguments);
             if (typeof result === 'object') {
                 $('[data-id="' + result.id + '"]').attr('data-model-id', result.data.id);
+                console.log(typeof result);
+                console.log(result);
                 console.log(result.id);
                 console.log(result.data.id);
             }
@@ -71,7 +73,6 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 }
             })
             var url = 'https://uat.aa-testing.com/cortana/export' + queryString;
-            console.log(url);
             var self = this;
             var action = {
                 type: 'ir.actions.act_url',
