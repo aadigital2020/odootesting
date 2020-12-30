@@ -34,6 +34,24 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             var result = this._super.apply(this, arguments);
             if (result !== null && result.hasOwnProperty('data') && result.data.hasOwnProperty('id')) {
                 $('[data-id="' + result.id + '"]').attr('data-model-id', result.data.id);
+
+                $('.cortana-preview').off('click');
+                $('body').on('click', '.cortana-preview', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+            
+                    console.log($(this).closest('[data-model-id]'));
+                    console.log($(this).closest('[data-model-id]').attr('data-model-id'));
+            
+                    var id = $(this).closest('[data-model-id]').attr('data-model-id');
+            
+                    $.get('https://uat.aa-testing.com/cortana/preview?id=' + id, function(data) {
+                        if ($('#cortana-preview-container').length === 0) {
+                            $('body').append('<div id="cortana-preview-container"></div>');
+                        }
+                        $('#cortana-preview-container').html(data.html);
+                    })
+                })
             }
             return result;
         }
@@ -78,18 +96,4 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             return this.do_action(action);
         }
     });
-
-    $('body').on('click', '.cortana-preview', function(e) {
-        console.log($(this).closest('[data-model-id]'));
-        console.log($(this).closest('[data-model-id]').attr('data-model-id'));
-
-        var id = $(this).closest('[data-model-id]').attr('data-model-id');
-
-        $.get('https://uat.aa-testing.com/cortana/preview?id=' + id, function(data) {
-            if ($('#cortana-preview-container').length === 0) {
-                $('body').append('<div id="cortana-preview-container"></div>');
-            }
-            $('#cortana-preview-container').html(data.html);
-        })
-    })
 });
