@@ -5,7 +5,7 @@
         <field name="inherit_id" ref="sale.view_sales_order_filter"/>
         <field name="arch" type="xml">
             <xpath expr="//search" position="inside">
-                <div>Hello</div>
+                <filter string="Today" domain="[('state','=',time.strftime('%Y-%m-%d'))]" help="Today"/>
             </xpath>
         </field>
     </record>
