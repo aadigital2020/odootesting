@@ -85,11 +85,8 @@ odoo.define('cortana__export_button.listview_button', function (require) {
         e.preventDefault();
         e.stopPropagation();
 
-        console.log($(this).closest('[data-model-id]'));
-        console.log($(this).closest('[data-model-id]').attr('data-model-id'));
-
         var id = $(this).closest('[data-model-id]').attr('data-model-id');
-
+        console.log('ggg');
         $.get('https://uat.aa-testing.com/cortana/preview?id=' + id, function(data) {
             if ($('#cortana-preview-container').length === 0) {
                 $('body').append('<div id="cortana-preview-container"></div>');
