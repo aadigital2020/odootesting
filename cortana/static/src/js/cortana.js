@@ -22,7 +22,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
 
             // URL Actions
             var queryString = '';
-            $('.o_facet_values').each(function(index, el) {
+            $('.o_facet_value').each(function(index, el) {
                 var text = $(el).html().trim();
                 console.log(text);
                 if (text.startsWith('到達日期 is equal to')) {
