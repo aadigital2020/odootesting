@@ -4,7 +4,7 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_sales_order_filter"/>
         <field name="arch" type="xml">
-            <xpath expr="//search" position="inside">
+            <xpath expr="//filter[last()]" position="after">
                 <filter string="Today" domain="[('state','=',time.strftime('%Y-%m-%d'))]" help="Today"/>
             </xpath>
         </field>
