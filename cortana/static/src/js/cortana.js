@@ -34,7 +34,8 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             var result = this._super.apply(this, arguments);
             if (result !== null && result.hasOwnProperty('data') && result.data.hasOwnProperty('id')) {
                 $('[data-id="' + result.id + '"]').attr('data-model-id', result.data.id);
-                $('.cortana-preview').parent().append('<a href="#" class="btn btn-primary cortana-preview-button">PREVIEW</a>');
+                $parent = $('[data-id="' + result.id + '"]').find('.cortana-preview').parent();
+                $parent.html('<a href="#" class="btn btn-primary cortana-preview-button">PREVIEW</a>');
             }
             return result;
         }
