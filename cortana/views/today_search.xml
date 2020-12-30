@@ -1,3 +1,10 @@
 <odoo>
-    
+    <record id="cortana_view_sales_order_filter" model="ir.ui.view">
+        <field name="name">cortana.sale.order.list.select</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="arch" type="xml">
+            
+        </field>
+    </record>
 </odoo>
