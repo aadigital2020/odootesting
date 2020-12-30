@@ -10,12 +10,13 @@
     'website': "http://www.aa-limited.com",
 
     'category': 'Test',
-    'version': '1.3',
+    'version': '1.4',
 
     'depends': ['base', 'web'],
 
     'data': [
         'views/assets.xml',
+        'views/today_search.xml',
     ],
 
     'external_dependencies': {
