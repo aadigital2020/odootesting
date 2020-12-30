@@ -5,7 +5,7 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
             <field name="arch" type="xml">
-                <xpath expr="//filter[@name='order_confirmed']" position="after"> // Adding the filter after existing filter 'Confirmed Orders'
+                <xpath expr="//filter[@name='order_confirmed']" position="after">
                     <separator/>
                     <filter string="Card Customer" name="is_card_customer" domain="[('partner_id.card_customer','=', True)]"/>
                     <separator/>
