@@ -80,8 +80,6 @@ odoo.define('cortana__export_button.listview_button', function (require) {
     });
 
     $('body').on('click', '.cortana-preview', function(e) {
-        e.preventDefault();
-
         console.log($(this).closest('[data-model-id]'));
         console.log($(this).closest('[data-model-id]').attr('data-model-id'));
 
