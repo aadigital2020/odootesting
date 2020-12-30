@@ -4,19 +4,13 @@ odoo.define('cortana__export_button.listview_button', function (require) {
     var core = require('web.core');
     var ListView = require('web.ListView');
     var ListController = require('web.ListController');
-    
-    ListView.include({
-        init: function() {
-            this._super.apply(this, arguments);
-            console.log('aa');
-        }
-    })
 
     ListController.include({
         renderButtons: function() {
             this._super.apply(this, arguments);
             if (this.modelName === 'x_this_is_tour_123') { // Change model name
                 var button = this.$buttons.find('button.cortana__export_button__button'); // Change button class
+                console.log('a')
                 button.on('click', this.proxy('action'))
             }
         },
