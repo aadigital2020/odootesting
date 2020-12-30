@@ -5,7 +5,14 @@ odoo.define('cortana__export_button.listview_button', function (require) {
     var ListView = require('web.ListView');
     var ListController = require('web.ListController');
     
-    var IncludeListView = {
+    ListView.include({
+        init: function() {
+            this._super.apply(this, arguments);
+            console.log('aa');
+        }
+    })
+
+    ListController.include({
         renderButtons: function() {
             this._super.apply(this, arguments);
             if (this.modelName === 'x_this_is_tour_123') { // Change model name
@@ -44,6 +51,5 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             };
             return this.do_action(action);
         }
-    };
-    ListController.include(IncludeListView);
+    });
 });
