@@ -1,12 +1,15 @@
 <odoo>
-    <record id="cortana_view_sales_order_filter" model="ir.ui.view">
-        <field name="name">sale.order.list.select</field>
-        <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
-        <field name="arch" type="xml">
-            <xpath expr="//filter[last()]" position="after">
-                
-            </xpath>
-        </field>
-    </record>
+    <!-- improved idea categories list -->
+<record id="idea_category_list2" model="ir.ui.view">
+    <field name="name">id.category.list2</field>
+    <field name="model">idea.category</field>
+    <field name="inherit_id" ref="id_category_list"/>
+    <field name="arch" type="xml">
+        <!-- find field description and add the field
+             idea_ids after it -->
+        <xpath expr="//field[@name='description']" position="after">
+          <field name="idea_ids" string="Number of ideas"/>
+        </xpath>
+    </field>
+</record>
 </odoo>
