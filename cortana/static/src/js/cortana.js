@@ -33,9 +33,6 @@ odoo.define('cortana__export_button.listview_button', function (require) {
         __get: function() {
             var result = this._super.apply(this, arguments);
             if (result !== null) {
-                console.log(result);
-                console.log(result.id);
-                console.log(result.data.id);
                 $('[data-id="' + result.id + '"]').attr('data-model-id', result.data.id);
             }
             return result;
@@ -85,7 +82,16 @@ odoo.define('cortana__export_button.listview_button', function (require) {
     $('body').on('click', '.cortana-preview', function(e) {
         e.preventDefault();
 
-        console.log($(this).closest('data-model-id'));
-        console.log($(this).closest('data-model-id').attr('data-model-id'));
+        console.log($(this).closest('[data-model-id]'));
+        console.log($(this).closest('[data-model-id]').attr('data-model-id'));
+
+        var id = $(this).closest('[data-model-id]').attr('data-model-id');
+
+        $.get('https://uat.aa-testing.com/cortana/preview?id=' + id, function(data) {
+            if ($('#cortana-preview').length === 0) {
+                $('body').append('<div id="cortana-preview"></div>');
+            }
+            $('#cortana-preview').html(data.html);
+        })
     })
 });
