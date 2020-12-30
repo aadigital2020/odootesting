@@ -43,22 +43,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 target: '_blank',
             };
             return this.do_action(action);
-        },
-        button_action: function() {
-            alert('aaaa');
-        },
+        }
     };
     ListController.include(IncludeListView);
-
-    ListView.include({
-        render_buttons: function() {
-            this._super.apply(this, arguments)
-            if (this.$buttons) {
-                this.$buttons.find('.cortana-preview').on('click', this.proxy('action'))
-            }
-        },
-        action: function () {
-            alert('qqqq')
-        }
-    })
 });
