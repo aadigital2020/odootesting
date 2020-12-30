@@ -2,7 +2,7 @@
     <record id="cortana_view_sales_order_filter" model="ir.ui.view">
         <field name="name">cortana.sale.order.list.select</field>
         <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="inherit_id" ref="sale.order.list.select"/>
         <field name="mode">extension</field>
         <field name="arch" type="xml">
            <xpath expr="//filter[last()]" position="after">
