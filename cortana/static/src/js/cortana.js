@@ -21,10 +21,17 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             // });
 
             // URL Actions
+            var queryString = '';
+            $('.o_searchview_facet').each(function(index, el) {
+                if ($(el).html.trim() === 'Today') {
+                    queryString = '?context=today';
+                    return false;
+                }
+            })
             var self = this;
             var action = {
                 type: 'ir.actions.act_url',
-                url: 'https://uat.aa-testing.com/cortana/export',
+                url: 'https://uat.aa-testing.com/cortana/export' + queryString,
                 target: '_blank',
             };
             return this.do_action(action);

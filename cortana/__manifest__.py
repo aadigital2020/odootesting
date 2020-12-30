@@ -16,7 +16,7 @@
 
     'data': [
         'views/assets.xml',
-        'views/today_search.xml',
+        # 'views/today_search.xml',
     ],
 
     'external_dependencies': {
