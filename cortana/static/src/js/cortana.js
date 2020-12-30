@@ -6,7 +6,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
     var ListController = require('web.ListController');
     
     ListView.include({
-        init: function() {
+        _loadData: function() {
             this._super.apply(this, arguments);
             this.arch.children.forEach(function (child) {
                 console.log(child);
