@@ -28,20 +28,6 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 target: '_blank',
             };
             return this.do_action(action);
-
-            // var self = this;
-            // var action = {
-            //     type: 'ir.actions.act_window',
-            //     name: 'Leave',
-            //     res_model: 'x_this_is_tour_123',
-            //     views: [[false,'form']],
-            //     target: 'new',
-            //     views: [[false, 'form']], 
-            //     view_type : 'form',
-            //     view_mode : 'form',
-            //     flags: {'form': {'action_buttons': true, 'options': {'mode': 'edit'}}}
-            // };
-            // return this.do_action(action);
         },
     };
     ListController.include(IncludeListView);
