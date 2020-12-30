@@ -24,6 +24,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             var queryString = '';
             $('.o_searchview_facet').each(function(index, el) {
                 var text = $(el).html().trim();
+                console.log(text);
                 if (text.startsWith('到達日期 is equal to')) {
                     queryString = '?context=' + text.replace('到達日期 is equal to ', '').replaceAll('"', '');
                     return false;
