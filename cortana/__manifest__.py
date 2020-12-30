@@ -10,7 +10,7 @@
     'website': "http://www.aa-limited.com",
 
     'category': 'Test',
-    'version': '1.0',
+    'version': '1.1',
 
     'depends': ['base', 'web'],
 
@@ -24,5 +24,6 @@
 
     'qweb': [
         'qweb/export_button.xml',
+        'qweb/today_search.xml',
     ],
 }
