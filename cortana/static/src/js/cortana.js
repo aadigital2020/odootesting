@@ -35,9 +35,9 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             if (typeof result === 'object') {
                 console.log(typeof result);
                 console.log(result);
-                console.log(result.id);
-                console.log(result.data.id);
-                $('[data-id="' + result.id + '"]').attr('data-model-id', result.data.id);
+                // console.log(result.id);
+                // console.log(result.data.id);
+                // $('[data-id="' + result.id + '"]').attr('data-model-id', result.data.id);
             }
             return result;
         }
