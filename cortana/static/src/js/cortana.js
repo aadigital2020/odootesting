@@ -97,4 +97,8 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             return this.do_action(action);
         }
     });
+
+    $('body').on('click', '#cortana-preview-container .cp-close', function(e) {
+        $('#cortana-preview-container').remove();
+    })
 });
