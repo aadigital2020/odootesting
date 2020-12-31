@@ -108,7 +108,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
 
                 if ($button.length) {
                     console.log($button);
-                    if ($button.hasClass('ccortana-preview-outbound')) {
+                    if ($button.hasClass('cortana-preview-outbound')) {
                         $('[data-id="' + result.id + '"]').attr('data-cortana-preview-base-url', 'https://uat.aa-testing.com/cortana/preview-outbound');
                     } else {
                         $('[data-id="' + result.id + '"]').attr('data-cortana-preview-base-url', 'https://uat.aa-testing.com/cortana/preview');
