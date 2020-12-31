@@ -9,23 +9,25 @@ var cortana_preview_button_event_handler = function(e) {
     e.stopPropagation();
 
     $('#cortana-preview-container').html(`
+    <style>
     .lds-ring {
-        display: inline-block;
+        display: block;
         position: relative;
-        width: 80px;
-        height: 80px;
+        margin: 15px auto;
+        width: 30px;
+        height: 30px;
     }
     .lds-ring div {
         box-sizing: border-box;
         display: block;
         position: absolute;
-        width: 64px;
-        height: 64px;
-        margin: 8px;
-        border: 8px solid #fff;
+        width: 30px;
+        height: 30px;
+        margin: 0;
+        border: 3px solid #fff;
         border-radius: 50%;
         animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-        border-color: #fff transparent transparent transparent;
+        border-color: #875A7B transparent transparent transparent;
     }
     .lds-ring div:nth-child(1) {
         animation-delay: -0.45s;
@@ -44,6 +46,7 @@ var cortana_preview_button_event_handler = function(e) {
           transform: rotate(360deg);
         }
     }
+    </style>
     <div class="lds-ring"><div></div><div></div><div></div><div></div></div>`);
 
     var id = $(this).closest('[data-model-id]').attr('data-model-id');
