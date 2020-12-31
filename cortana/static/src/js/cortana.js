@@ -13,6 +13,10 @@ var cortana_preview_button_event_handler = function(e) {
     })
 }
 
+$('body').on('click', '#cortana-preview-container .cp-close', function(e) {
+    $('#cortana-preview-container').remove();
+})
+
 odoo.define('cortana__export_button.listview_button', function (require) {
     'use strict';
 
@@ -97,8 +101,4 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             return this.do_action(action);
         }
     });
-
-    $('body').on('click', '#cortana-preview-container .cp-close', function(e) {
-        $('#cortana-preview-container').remove();
-    })
 });
