@@ -81,7 +81,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
         }
     });
 
-    $('body').on('click', '.cortana-preview-button', function(e) {
+    $('td').on('click', '.cortana-preview-button', function(e) {
         e.preventDefault();
         e.stopPropagation();
 

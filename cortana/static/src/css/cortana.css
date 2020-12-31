@@ -1,3 +1,6 @@
+.cortana-preview {
+    display: none;
+}
 #cortana-preview-container {
     position: fixed;
     z-index: 999;
