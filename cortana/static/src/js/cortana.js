@@ -1,12 +1,16 @@
+var append_preview_container = function() {
+    if ($('#cortana-preview-container').length === 0) {
+        $('body').append('<div id="cortana-preview-container"></div>');
+    }
+}
+
 var cortana_preview_button_event_handler = function(e) {
     e.preventDefault();
     e.stopPropagation();
 
     var id = $(this).closest('[data-model-id]').attr('data-model-id');
     $.get('https://uat.aa-testing.com/cortana/preview?id=' + id, function(data) {
-        if ($('#cortana-preview-container').length === 0) {
-            $('body').append('<div id="cortana-preview-container"></div>');
-        }
+        append_preview_container();
         $('#cortana-preview-container').html(data.html);
     })
 }
@@ -44,6 +48,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
 
     ListModel.include({
         __get: function() {
+            append_preview_container();
             var result = this._super.apply(this, arguments);
             if (result !== null && result.hasOwnProperty('data') && result.data.hasOwnProperty('id')) {
                 $('[data-id="' + result.id + '"]').attr('data-model-id', result.data.id);
