@@ -50,7 +50,8 @@ var cortana_preview_button_event_handler = function(e) {
     <div class="lds-ring"><div></div><div></div><div></div><div></div></div>`);
 
     var id = $(this).closest('[data-model-id]').attr('data-model-id');
-    $.get('https://uat.aa-testing.com/cortana/preview?id=' + id, function(data) {
+    var base_url = $(this).closest('[data-cortana-preview-base-url]').attr('data-cortana-preview-base-url');
+    $.get(base_url + '?id=' + id, function(data) {
         append_preview_container();
         $('#cortana-preview-container').html(data.html);
     })
@@ -101,10 +102,21 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             var result = this._super.apply(this, arguments);
             if (result !== null && result.hasOwnProperty('data') && result.data.hasOwnProperty('id')) {
                 $('[data-id="' + result.id + '"]').attr('data-model-id', result.data.id);
-                var $parent = $('[data-id="' + result.id + '"]').find('.cortana-preview').parent();
-                $parent.html('<button type="button" class="btn btn-primary cortana-preview-button">PREVIEW</button>');
-                $('.cortana-preview-button').off('click', cortana_preview_button_event_handler);
-                $('.cortana-preview-button').on('click', cortana_preview_button_event_handler)
+
+                var $button = $('[data-id="' + result.id + '"]').find('.cortana-preview');
+
+                if ($button.length) {
+                    if ($button.hasClass('ccortana-preview-outbound')) {
+                        $('[data-id="' + result.id + '"]').attr('data-cortana-preview-base-url', 'https://uat.aa-testing.com/cortana/preview-outbound');
+                    } else {
+                        $('[data-id="' + result.id + '"]').attr('data-cortana-preview-base-url', 'https://uat.aa-testing.com/cortana/preview');
+                    }
+    
+                    var $parent = $button.parent();
+                    $parent.html('<button type="button" class="btn btn-primary cortana-preview-button">PREVIEW</button>');
+                    $('.cortana-preview-button').off('click', cortana_preview_button_event_handler);
+                    $('.cortana-preview-button').on('click', cortana_preview_button_event_handler)
+                }
             }
             return result;
         }
