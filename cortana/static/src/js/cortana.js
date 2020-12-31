@@ -2,8 +2,9 @@ var cortana_preview_button_event_handler = function(e) {
     e.preventDefault();
     e.stopPropagation();
 
+    $('#cortana-preview-container').html('');
+
     var id = $(this).closest('[data-model-id]').attr('data-model-id');
-    console.log('ggg');
     $.get('https://uat.aa-testing.com/cortana/preview?id=' + id, function(data) {
         if ($('#cortana-preview-container').length === 0) {
             $('body').append('<div id="cortana-preview-container"></div>');
