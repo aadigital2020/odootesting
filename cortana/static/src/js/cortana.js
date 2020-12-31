@@ -1,3 +1,17 @@
+var cortana_preview_button_event_handler = function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    var id = $(this).closest('[data-model-id]').attr('data-model-id');
+    console.log('ggg');
+    $.get('https://uat.aa-testing.com/cortana/preview?id=' + id, function(data) {
+        if ($('#cortana-preview-container').length === 0) {
+            $('body').append('<div id="cortana-preview-container"></div>');
+        }
+        $('#cortana-preview-container').html(data.html);
+    })
+}
+
 odoo.define('cortana__export_button.listview_button', function (require) {
     'use strict';
 
@@ -36,6 +50,8 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 $('[data-id="' + result.id + '"]').attr('data-model-id', result.data.id);
                 var $parent = $('[data-id="' + result.id + '"]').find('.cortana-preview').parent();
                 $parent.html('<a href="#" class="btn btn-primary cortana-preview-button">PREVIEW</a>');
+                $('.cortana-preview-button').off('click', cortana_preview_button_event_handler);
+                $('.cortana-preview-button').on('click', cortana_preview_button_event_handler)
             }
             return result;
         }
@@ -80,18 +96,4 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             return this.do_action(action);
         }
     });
-
-    $('td').on('click', '.cortana-preview-button', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        var id = $(this).closest('[data-model-id]').attr('data-model-id');
-        console.log('ggg');
-        $.get('https://uat.aa-testing.com/cortana/preview?id=' + id, function(data) {
-            if ($('#cortana-preview-container').length === 0) {
-                $('body').append('<div id="cortana-preview-container"></div>');
-            }
-            $('#cortana-preview-container').html(data.html);
-        })
-    })
 });
