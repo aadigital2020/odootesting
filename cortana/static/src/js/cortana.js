@@ -13,10 +13,6 @@ var cortana_preview_button_event_handler = function(e) {
     })
 }
 
-$('body').on('click', '#cortana-preview-container .cp-close', function(e) {
-    $('#cortana-preview-container').remove();
-})
-
 odoo.define('cortana__export_button.listview_button', function (require) {
     'use strict';
 
