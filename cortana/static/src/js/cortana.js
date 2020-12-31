@@ -2,12 +2,14 @@ var append_preview_container = function() {
     if ($('#cortana-preview-container').length === 0) {
         $('body').append('<div id="cortana-preview-container"></div>');
     }
+    $('#cortana-preview-container').html('');
 }
 
 var cortana_preview_button_event_handler = function(e) {
     e.preventDefault();
     e.stopPropagation();
 
+    append_preview_container();
     $('#cortana-preview-container').html(`
     <style>
     .lds-ring {
@@ -52,7 +54,6 @@ var cortana_preview_button_event_handler = function(e) {
     var id = $(this).closest('[data-model-id]').attr('data-model-id');
     var base_url = $(this).closest('[data-cortana-preview-base-url]').attr('data-cortana-preview-base-url');
     $.get(base_url + '?id=' + id, function(data) {
-        append_preview_container();
         $('#cortana-preview-container').html(data.html);
     })
 }
