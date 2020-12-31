@@ -1,8 +1,8 @@
 var append_preview_container = function() {
+    $('.cortana-preview-container').remove();
     if ($('.cortana-preview-container').length === 0) {
         $('body').append('<div class="cortana-preview-container"></div>');
     }
-    $('.cortana-preview-container').html('');
 }
 
 var cortana_preview_button_event_handler = function(e) {
