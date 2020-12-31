@@ -56,6 +56,14 @@ var cortana_preview_button_event_handler = function(e) {
     })
 }
 
+$(function() {
+    $('[name="x_studio__12"], [name="x_studio__14"], [name="x_studio__15"]').on('change', function() {
+        var total = parseInt($('[[name="x_studio__12"]').val()) + parseInt($('[[name="x_studio__14"]').val()) + parseInt($('[[name="x_studio__15"]').val());
+        $('[[name="x_studio__13"]').val(total);
+        console.log(total)
+    })
+})
+
 odoo.define('cortana__export_button.listview_button', function (require) {
     'use strict';
 
