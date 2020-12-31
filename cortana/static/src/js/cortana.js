@@ -60,7 +60,7 @@ $(function() {
     $('body').on('change', '[name="x_studio__12"], [name="x_studio__14"], [name="x_studio__15"]', function() {
         var total = parseInt($('[name="x_studio__12"]').val()) + parseInt($('[name="x_studio__14"]').val()) + parseInt($('[name="x_studio__15"]').val());
         $('[name="x_studio__13"]').val(total);
-        console.log(total)
+        $('[name="x_studio__13"]').change();
     })
 })
 
