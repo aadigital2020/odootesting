@@ -6,7 +6,7 @@ import logging
 _logger = logging.getLogger(__name__)
 
 class InBoundTourExtend(models.Model):
-    _inherit = 'studio_customization.x_in_bound_tour'
+    _inherit = 'web_studio.x_in_bound_tour'
 
     field_1 = fields.Char(required=True,string="Field One")
     
