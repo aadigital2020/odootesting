@@ -12,7 +12,7 @@
     'category': 'Test',
     'version': '1.52',
 
-    'depends': ['base', 'web', 'studio_customization'],
+    'depends': ['base', 'web', 'web_studio'],
 
     'data': [
         'views/assets.xml',
