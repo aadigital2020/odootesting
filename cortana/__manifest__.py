@@ -10,7 +10,7 @@
     'website': "http://www.aa-limited.com",
 
     'category': 'Test',
-    'version': '1.57',
+    'version': '1.58',
 
     'depends': ['base', 'web', 'web_studio'],
 
