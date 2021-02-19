@@ -2,7 +2,12 @@
 
 from odoo import models, fields, api
 
-# class openacademy(models.Model):
-#     _name = 'openacademy.openacademy'
+class InBoundTourExtend(models.Model):
+    _inherit = 'studio_customization.x_in_bound_tour'
 
-#     name = fields.Char()
+    field_1 = fields.Char(required=True,string="Field One")
+    
+    @api.model
+    def create(self, vals):
+        ## Definition
+        return super(models.Model, self).create(vals)
