@@ -10,9 +10,9 @@
     'website': "http://www.aa-limited.com",
 
     'category': 'Test',
-    'version': '10.0',
+    'version': '11.0',
 
-    'depends': ['base', 'web', 'web_studio'],
+    'depends': ['base', 'web', 'studio_customization'],
 
     'data': [
         'views/assets.xml',
