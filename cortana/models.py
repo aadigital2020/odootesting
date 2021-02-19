@@ -3,7 +3,7 @@
 from odoo import models, fields, api
 
 class InBoundTourExtend(models.Model):
-    _inherit = 'x_in_bound_tour'
+    _inherit = 'x_in_bound_tours'
 
     field_1 = fields.Char(required=True,string="Field One")
     
