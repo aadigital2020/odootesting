@@ -130,17 +130,17 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             if (this.modelName === 'x_this_is_tour_123') { // Change model name
                 var button = this.$buttons.find('button.cortana__export_button__button'); // Change button class
                 button.on('click', this.proxy('action'));
-                var button_a = this.$buttons.find('button.cortana__export_a_button__button');
-                var button_b = this.$buttons.find('button.cortana__export_b_button__button');
-                var button_c = this.$buttons.find('button.cortana__export_c_button__button');
-                var button_d = this.$buttons.find('button.cortana__export_d_button__button');
-                var button_e = this.$buttons.find('button.cortana__export_e_button__button');
-                var button_f = this.$buttons.find('button.cortana__export_f_button__button');
-                var button_g = this.$buttons.find('button.cortana__export_g_button__button');
-                var button_h = this.$buttons.find('button.cortana__export_h_button__button');
-                var button_i = this.$buttons.find('button.cortana__export_i_button__button');
-                var button_j = this.$buttons.find('button.cortana__export_j_button__button');
-                var button_k = this.$buttons.find('button.cortana__export_k_button__button');
+                var button_a = this.$buttons.find('a.cortana__export_a_button__button');
+                var button_b = this.$buttons.find('a.cortana__export_b_button__button');
+                var button_c = this.$buttons.find('a.cortana__export_c_button__button');
+                var button_d = this.$buttons.find('a.cortana__export_d_button__button');
+                var button_e = this.$buttons.find('a.cortana__export_e_button__button');
+                var button_f = this.$buttons.find('a.cortana__export_f_button__button');
+                var button_g = this.$buttons.find('a.cortana__export_g_button__button');
+                var button_h = this.$buttons.find('a.cortana__export_h_button__button');
+                var button_i = this.$buttons.find('a.cortana__export_i_button__button');
+                var button_j = this.$buttons.find('a.cortana__export_j_button__button');
+                var button_k = this.$buttons.find('a.cortana__export_k_button__button');
 
                 button_a.on('click', function(e){
                     e.preventDefault;
