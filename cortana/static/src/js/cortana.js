@@ -185,16 +185,23 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     if(select_id != null)
                     {
                         str_arr = JSON.stringify(select_id);
-                        console.log(str_arr);
-                        console.log(url + str_arr);
+                        window.location.href = url + str_arr;
                     }
-                    
-                    
                 });
 
                 button_f.on('click', function(e){
                     e.preventDefault();
-                    console.log('f');
+                    var select_id = [];
+                    var str_arr = '';
+                    $('tbody input:checked').each(function(){
+                        select_id.push($(this).closest('tr').attr('data-model-id'));
+                    });
+                    var url = 'https://uat.aa-testing.com/cortana/export-f?id_array=';
+                    if(select_id != null)
+                    {
+                        str_arr = JSON.stringify(select_id);
+                        window.location.href = url + str_arr;
+                    }
                 });
 
                 button_g.on('click', function(e){
@@ -235,15 +242,45 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 });
                 button_i.on('click', function(e){
                     e.preventDefault();
-                    console.log('i');
+                    var select_id = [];
+                    var str_arr = '';
+                    $('tbody input:checked').each(function(){
+                        select_id.push($(this).closest('tr').attr('data-model-id'));
+                    });
+                    var url = 'https://uat.aa-testing.com/cortana/export-i?id_array=';
+                    if(select_id != null)
+                    {
+                        str_arr = JSON.stringify(select_id);
+                        window.location.href = url + str_arr;
+                    }
                 });
                 button_j.on('click', function(e){
                     e.preventDefault();
-                    console.log('j');
+                    var select_id = [];
+                    var str_arr = '';
+                    $('tbody input:checked').each(function(){
+                        select_id.push($(this).closest('tr').attr('data-model-id'));
+                    });
+                    var url = 'https://uat.aa-testing.com/cortana/export-j?id_array=';
+                    if(select_id != null)
+                    {
+                        str_arr = JSON.stringify(select_id);
+                        window.location.href = url + str_arr;
+                    }
                 });
                 button_k.on('click', function(e){
                     e.preventDefault();
-                    console.log('k');
+                    var select_id = [];
+                    var str_arr = '';
+                    $('tbody input:checked').each(function(){
+                        select_id.push($(this).closest('tr').attr('data-model-id'));
+                    });
+                    var url = 'https://uat.aa-testing.com/cortana/export-k?id_array=';
+                    if(select_id != null)
+                    {
+                        str_arr = JSON.stringify(select_id);
+                        window.location.href = url + str_arr;
+                    }
                 });
             }
         
