@@ -194,7 +194,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                             var raw_date = text.replace('離開日期 is euqal to ', '').replaceAll('"', '');
                             var date_array = raw_date.split('/');
                             var  date = date_array[2] + '-' + date_array[0] + '-' + date_array[1]; 
-                            queryString = '?context=' + date;
+                            queryString = '?date=' + date;
                             return false;
                         }
                     });
@@ -212,7 +212,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                             var raw_date = text.replace('到達日期 is euqal to ', '').replaceAll('"', '');
                             var date_array = raw_date.split('/');
                             var  date = date_array[2] + '-' + date_array[0] + '-' + date_array[1]; 
-                            queryString = '?context=' + date;
+                            queryString = '?date=' + date;
                             return false;
                         }
                     });
