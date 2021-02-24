@@ -40,6 +40,9 @@ var cortana_preview_button_event_handler = function(e) {
     .lds-ring div:nth-child(3) {
         animation-delay: -0.15s;
     }
+    .dropdown{
+        display:inline-block;
+    }
     @keyframes lds-ring {
         0% {
           transform: rotate(0deg);

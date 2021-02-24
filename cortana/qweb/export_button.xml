@@ -7,7 +7,7 @@
                     Export
                 </button>
                 <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle cortana__export_a_to_d_button__button" id="dropdownMenuButton_a">
+                    <button type="button" class="btn btn-primary dropdown-toggle cortana__export_a_to_d_button__button" id="dropdownMenuButton_a" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         日程表
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton_a">
@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle cortana__export_e_to_f_button__button" id="dropdownMenuButton_b">
+                    <button type="button" class="btn btn-primary dropdown-toggle cortana__export_e_to_f_button__button" id="dropdownMenuButton_b" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         導遊文檔
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton_b">
@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle cortana__export_g_to_h_button__button" id="dropdownMenuButton_c">
+                    <button type="button" class="btn btn-primary dropdown-toggle cortana__export_g_to_h_button__button" id="dropdownMenuButton_c" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         接送列表
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton_c">
@@ -36,12 +36,12 @@
                     </div>
                 </div>
 
-                <button type="button" class="btn btn-primary dropdown-toggle cortana__export_i_button__button" id="dropdownMenuButton_d">
+                <button type="button" class="btn btn-primary dropdown-toggle cortana__export_i_button__button" id="dropdownMenuButton_d" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     確認合同
                 </button>
 
                 <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle cortana__export_j_to_k_button__button" id="dropdownMenuButton_e">
+                    <button type="button" class="btn btn-primary dropdown-toggle cortana__export_j_to_k_button__button" id="dropdownMenuButton_e" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         TIC
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton_e">
