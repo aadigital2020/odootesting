@@ -6,6 +6,22 @@
                 <button type="button" class="btn btn-primary cortana__export_button__button">
                     Export
                 </button>
+                <button type="button" class="btn btn-primary cortana__export_a_to_d_button__button">
+                    日程表
+                </button>
+                <button type="button" class="btn btn-primary cortana__export_e_to_f_button__button">
+                    導遊文檔
+                </button>
+                 <button type="button" class="btn btn-primary cortana__export_g_to_h_button__button">
+                    接送列表
+                </button>
+                 <button type="button" class="btn btn-primary cortana__export_i_button__button">
+                    確認合同
+                </button>
+                 <button type="button" class="btn btn-primary cortana__export_j_to_k_button__button">
+                    TIC
+                </button>
+               
             </t>
         </t>
     </t>
