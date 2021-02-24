@@ -138,58 +138,58 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 var button_f = this.$buttons.find('a.cortana__export_f_button__button');
                 var button_g = this.$buttons.find('a.cortana__export_g_button__button');
                 var button_h = this.$buttons.find('a.cortana__export_h_button__button');
-                var button_i = this.$buttons.find('a.cortana__export_i_button__button');
+                var button_i = this.$buttons.find('button.cortana__export_i_button__button');
                 var button_j = this.$buttons.find('a.cortana__export_j_button__button');
                 var button_k = this.$buttons.find('a.cortana__export_k_button__button');
 
                 button_a.on('click', function(e){
-                    e.preventDefault;
-                    console.log('a');
+                    e.preventDefault();
+                    window.location.href='https://uat.aa-testing.com/cortana/export-a';
                 });
                 button_b.on('click', function(e){
-                    e.preventDefault;
-                    console.log('b');
+                    e.preventDefault();
+                    window.location.href='https://uat.aa-testing.com/cortana/export-b';
                 });
 
                 button_c.on('click', function(e){
-                    e.preventDefault;
-                    console.log('c');
+                    e.preventDefault();
+                    window.location.href='https://uat.aa-testing.com/cortana/export-c';
                 });
 
                 button_d.on('click', function(e){
-                    e.preventDefault;
+                    e.preventDefault();
                     console.log('d');
                 });
 
                 button_e.on('click', function(e){
-                    e.preventDefault;
+                    e.preventDefault();
                     console.log('e');
                 });
 
                 button_f.on('click', function(e){
-                    e.preventDefault;
+                    e.preventDefault();
                     console.log('f');
                 });
 
                 button_g.on('click', function(e){
-                    e.preventDefault;
+                    e.preventDefault();
                     console.log('g');
                 });
 
                 button_h.on('click', function(e){
-                    e.preventDefault;
+                    e.preventDefault();
                     console.log('h');
                 });
                 button_i.on('click', function(e){
-                    e.preventDefault;
+                    e.preventDefault();
                     console.log('i');
                 });
                 button_j.on('click', function(e){
-                    e.preventDefault;
+                    e.preventDefault();
                     console.log('j');
                 });
                 button_k.on('click', function(e){
-                    e.preventDefault;
+                    e.preventDefault();
                     console.log('k');
                 });
             }
