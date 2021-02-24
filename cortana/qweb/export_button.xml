@@ -36,7 +36,7 @@
                     </div>
                 </div>
 
-                <button type="button" class="btn btn-primary dropdown-toggle cortana__export_i_button__button" id="dropdownMenuButton_d" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn btn-primary cortana__export_i_button__button" >
                     確認合同
                 </button>
 
