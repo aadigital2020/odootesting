@@ -177,18 +177,19 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 button_e.on('click', function(e){
                     e.preventDefault();
                     var select_id = [];
+                    var str_arr = '';
                     $('tbody input:checked').each(function(){
                         select_id.push($(this).closest('tr').attr('data-model-id'));
                     });
                     var url = 'https://uat.aa-testing.com/cortana/export-e/';
                     if(select_id != null)
                     {
-                        select_id.forEach(element => {
-                            window.location.href = url + element;
-                        });
+                        str_arr = JSON.stringify(select_id);
+                        console.log(str_arr);
+                        console.log(url + str_arr);
                     }
                     
-                    console.log(select_id);
+                    
                 });
 
                 button_f.on('click', function(e){
