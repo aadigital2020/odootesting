@@ -200,6 +200,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     });
                     var url = 'https://uat.aa-testing.com/cortana/export-g' +  queryString;
                     console.log(url);
+                    window.location.href = url;
                 });
 
                 button_h.on('click', function(e){
@@ -209,7 +210,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                         var text = $(el).html().trim();
                         console.log(text);
                         if (text.startsWith('到達日期 is equal to')) {
-                            var raw_date = text.replace('到達日期 is euqal to ', '').replaceAll('"', '');
+                            var raw_date = text.replace('到達日期 is equal to ', '').replaceAll('"', '');
                             var date_array = raw_date.split('/');
                             var  date = date_array[2] + '-' + date_array[0] + '-' + date_array[1]; 
                             queryString = '?date=' + date;
