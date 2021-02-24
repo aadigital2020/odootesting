@@ -65,7 +65,6 @@ $(function() {
         $('[name="x_studio__13"]').change();
     })
 })
-
 odoo.define('cortana__export_button.listview_button', function (require) {
     'use strict';
 
@@ -74,6 +73,12 @@ odoo.define('cortana__export_button.listview_button', function (require) {
     var ListRenderer = require('web.ListRenderer');
     var ListModel = require('web.ListModel');
     var ListController = require('web.ListController');
+
+    var FormModel = require('web.FormModel');
+    var FormController = require('web.ListController');
+
+    console.log(FormController);
+    console.log(FormModel);
     
     // ListView.include({
     //     init: function() {
