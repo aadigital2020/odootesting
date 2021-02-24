@@ -176,7 +176,8 @@ odoo.define('cortana__export_button.listview_button', function (require) {
 
                 button_e.on('click', function(e){
                     e.preventDefault();
-                    console.log('e');
+                    var length = $('input:checked').length;
+                    console.log(length);
                 });
 
                 button_f.on('click', function(e){
