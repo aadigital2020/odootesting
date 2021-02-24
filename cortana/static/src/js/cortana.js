@@ -67,7 +67,7 @@ $(function() {
 })
 odoo.define('cortana__export_button.formview_button', function (require) {
     var FormModel = require('web.FormModel');
-    var FormController = require('web.ListController');
+    var FormController = require('web.FormController');
 
     console.log(FormController);
     console.log(FormModel);
