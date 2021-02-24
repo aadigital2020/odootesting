@@ -1,5 +1,3 @@
-//djiojoidiodajsdjlasjdiajsknk
-
 var append_preview_container = function() {
     $('.cortana-preview-container').remove();
     if ($('.cortana-preview-container').length === 0) {
@@ -127,42 +125,6 @@ odoo.define('cortana__export_button.listview_button', function (require) {
     })
 
     ListController.include({
-        renderButtons: function() {
-            this._super.apply(this, arguments);
-            if (this.modelName === 'x_this_is_tour_123') { // Change model name
-                var button = this.$buttons.find('button.cortana__export_button__button'); // Change button class
-                button.on('click', this.proxy('action'))
-            }
-        },
-        action: function() {
-            // Call Ajax
-            // var ajax = require('web.ajax');
-            // ajax.jsonRpc('/cortana/cortana/export', 'call', {}).then(function(data) {
-            //     console.log(data);
-            // });
-
-            // URL Actions
-            var queryString = '';
-            $('.o_facet_value').each(function(index, el) {
-                var text = $(el).html().trim();
-                console.log(text);
-                if (text.startsWith('到達日期 is equal to')) {
-                    queryString = '?context=' + text.replace('到達日期 is equal to ', '').replaceAll('"', '');
-                    return false;
-                }
-                if (text === 'Today') {
-                    queryString = '?context=today';
-                    return false;
-                }
-            })
-            var url = 'https://uat.aa-testing.com/cortana/export' + queryString;
-            var self = this;
-            var action = {
-                type: 'ir.actions.act_url',
-                url: url,
-                target: '_blank',
-            };
-            return this.do_action(action);
-        }
+     
     });
 });
