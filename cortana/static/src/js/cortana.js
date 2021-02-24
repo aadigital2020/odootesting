@@ -199,7 +199,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                         }
                     });
                     var url = 'https://uat.aa-testing.com/cortana/export-g' +  queryString;
-                    window.location.href = url;
+                    console.log(url);
                 });
 
                 button_h.on('click', function(e){
