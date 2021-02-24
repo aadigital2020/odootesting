@@ -178,7 +178,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     e.preventDefault();
                     var select_id = [];
                     $('tbody input:checked').each(function(){
-                        select_id[] = $(this).closest('tr').attr('data-model-id');
+                        select_id.push($(this).closest('tr').attr('data-model-id'));
                     });
                     console.log(select_id);
                 });
