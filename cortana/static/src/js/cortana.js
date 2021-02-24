@@ -130,7 +130,6 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             if (this.modelName === 'x_this_is_tour_123') { // Change model name
                 var button = this.$buttons.find('button.cortana__export_button__button'); // Change button class
                 button.on('click', this.proxy('action'));
-                $('.dropdown').css('display', 'inline-block');
                 var button_a = this.$buttons.find('button.cortana__export_a_button__button');
                 var button_b = this.$buttons.find('button.cortana__export_b_button__button');
                 var button_c = this.$buttons.find('button.cortana__export_c_button__button');

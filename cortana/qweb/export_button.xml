@@ -6,7 +6,7 @@
                 <button type="button" class="btn btn-primary cortana__export_button__button">
                     Export
                 </button>
-                <div class="dropdown">
+                <div class="dropdown" style="display:inline-block;">
                     <button type="button" class="btn btn-primary dropdown-toggle cortana__export_a_to_d_button__button" id="dropdownMenuButton_a" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         日程表
                     </button>
@@ -17,7 +17,7 @@
                         <a href="#" class="dropdown-item cortana__export_d_button__button">簡易日程表</a>
                     </div>
                 </div>
-                <div class="dropdown">
+                <div class="dropdown" style="display:inline-block;">
                     <button type="button" class="btn btn-primary dropdown-toggle cortana__export_e_to_f_button__button" id="dropdownMenuButton_b" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         導遊文檔
                     </button>
@@ -26,7 +26,7 @@
                         <a href="#" class="dropdown-item cortana__export_f_button__button">導遊報數</a>
                     </div>
                 </div>
-                <div class="dropdown">
+                <div class="dropdown" style="display:inline-block;">
                     <button type="button" class="btn btn-primary dropdown-toggle cortana__export_g_to_h_button__button" id="dropdownMenuButton_c" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         接送列表
                     </button>
@@ -40,7 +40,7 @@
                     確認合同
                 </button>
 
-                <div class="dropdown">
+                <div class="dropdown" style="display:inline-block;">
                     <button type="button" class="btn btn-primary dropdown-toggle cortana__export_j_to_k_button__button" id="dropdownMenuButton_e" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         TIC
                     </button>
