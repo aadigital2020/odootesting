@@ -144,19 +144,6 @@ odoo.define('cortana__export_button.listview_button', function (require) {
 
                 button_a.on('click', function(e){
                     e.preventDefault();
-                    var queryString = '';
-                    $('.o_facet_value').each(function(index, el) {
-                        var text = $(el).html().trim();
-                        console.log(text);
-                        if (text.startsWith('到達日期 is equal to')) {
-                            queryString = '?context=' + text.replace('到達日期 is equal to ', '').replaceAll('"', '');
-                            return false;
-                        }
-                        if (text === 'Today') {
-                            queryString = '?context=today';
-                            return false;
-                        }
-                    });
                     window.location.href='https://uat.aa-testing.com/cortana/export';
                 });
                 button_b.on('click', function(e){
@@ -167,11 +154,12 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 button_c.on('click', function(e){
                     e.preventDefault();
                     window.location.href='https://uat.aa-testing.com/cortana/export-c';
+                    
                 });
 
                 button_d.on('click', function(e){
                     e.preventDefault();
-                    console.log('d');
+                    window.location.href='https://uat.aa-testing.com/cortana/export-d';
                 });
 
                 button_e.on('click', function(e){
@@ -207,38 +195,43 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 button_g.on('click', function(e){
                     e.preventDefault();
                     var queryString = '';
+                    var date = null;
                     $('.o_facet_value').each(function(index, el) {
                         var text = $(el).html().trim();
                         console.log(text);
                         if (text.startsWith('離開日期 is equal to')) {
                             var raw_date = text.replace('離開日期 is equal to ', '').replaceAll('"', '');
                             var date_array = raw_date.split('/');
-                            var date = date_array[2] + '-' + date_array[0] + '-' + date_array[1]; 
+                            date = date_array[2] + '-' + date_array[0] + '-' + date_array[1]; 
                             queryString = '?date=' + date;
                             return false;
                         }
                     });
+                    if (date != null){
                     var url = 'https://uat.aa-testing.com/cortana/export-g' +  queryString;
-                    console.log(url);
-                    window.location.href = url;
+                        window.location.href = url;
+                    }
                 });
 
                 button_h.on('click', function(e){
                     e.preventDefault();
                     var queryString = '';
+                    var date = null;
                     $('.o_facet_value').each(function(index, el) {
                         var text = $(el).html().trim();
                         console.log(text);
                         if (text.startsWith('到達日期 is equal to')) {
                             var raw_date = text.replace('到達日期 is equal to ', '').replaceAll('"', '');
                             var date_array = raw_date.split('/');
-                            var  date = date_array[2] + '-' + date_array[0] + '-' + date_array[1]; 
+                            date = date_array[2] + '-' + date_array[0] + '-' + date_array[1]; 
                             queryString = '?date=' + date;
                             return false;
                         }
                     });
+                    if (date != null){
                     var url = 'https://uat.aa-testing.com/cortana/export-h' +  queryString;
-                    window.location.href = url;
+                        window.location.href = url;
+                    }
                 });
                 button_i.on('click', function(e){
                     e.preventDefault();
