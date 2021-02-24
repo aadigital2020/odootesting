@@ -66,16 +66,20 @@ $(function() {
     })
 })
 odoo.define('cortana__export_button.formview_button', function (require) {
+    'use strict';
+
     var FormModel = require('web.FormModel');
     var FormController = require('web.FormController');
 
     console.log(FormController);
     console.log(FormModel);
+    console.log('hi form');
     
 });
 
 odoo.define('cortana__export_button.listview_button', function (require) {
     'use strict';
+    console.log('hi list');
 
     var core = require('web.core');
     var ListView = require('web.ListView');
