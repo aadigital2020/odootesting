@@ -52,8 +52,8 @@
             </t>
         </t>
     </t>
-    <t t-extend="FormView.buttons_view">
-        <t t-jquery="div.o_from_buttons_view" t-operation="append">
+    <t t-extend="FormView.buttons">
+        <t t-jquery="div.o_form_buttons_view" t-operation="append">
             <t t-if = "widget.modelName == 'x_this_is_tour_123'">
                 <button type="button" class="btn btn-primary cortana__export_l_button__button" >
                     發票
