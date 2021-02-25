@@ -71,7 +71,6 @@ odoo.define('cortana__export_button.listview_button', function (require) {
     'use strict';
     console.log('hi list');
    
-    console.log(params);
     $(document).on('click', '.cortana__export_l_button__button', function(e){
         e.preventDefault();
         var params = [], hash;
