@@ -68,11 +68,7 @@
                 <button type="button" class="btn btn-primary cortana__export_m_button__button" >
                     酒店預約
                 </button>
-                 <t t-set="head">
-                    <script>
-                        console.log('2312312');
-                    </script>
-                </t>
+                
             </t>
         </t>
     </t>
