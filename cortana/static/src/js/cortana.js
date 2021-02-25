@@ -135,7 +135,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             var url = 'https://uat.aa-testing.com/cortana/export-3/' +  params['id'];
         }
         if (category == '單門票'){
-            var url = 'https://uat.aa-testing.com/cortana/export-4/' +  params['id'];
+            var url = 'https://uat.aa-testing.com/cortana/export-3/' +  params['id'];
         }
         
         window.location.href = url;
