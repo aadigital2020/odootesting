@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="cortana__export_button" xml:space="preserve">
- <t t-set="head">
-    <script>
-        console.log('123');
-    </script>
-</t>
     <t t-extend="ListView.buttons">
         <t t-jquery="div.o_list_buttons" t-operation="append">
             <t t-if = "widget.modelName == 'x_this_is_tour_123'">
@@ -58,8 +53,11 @@
         </t>
     </t>
     <t t-extend="FormView.buttons">
-       
-
+        <t t-set="head">
+            <script>
+                console.log('123');
+            </script>
+        </t>
         <t t-jquery="div.o_form_buttons_view" t-operation="append">
         
             <t t-if = "widget.modelName == 'x_this_is_tour_123'">
