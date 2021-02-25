@@ -4,15 +4,8 @@ var append_preview_container = function() {
         $('body').append('<div class="cortana-preview-container"></div>');
     }
 }
-$('a.cortana__export_l_button__button').on('click', function(){
-    console.log('lllll');
-});
-$('a.cortana__export_m_button__button').on('click', function(){
-    console.log('mmmmmmm');
-});
-$('a.cortana__export_a_button__button').on('click', function(){
-    console.log('aaaa');
-});
+
+
 var cortana_preview_button_event_handler = function(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -156,17 +149,17 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 var button_j = this.$buttons.find('a.cortana__export_j_button__button');
                 var button_k = this.$buttons.find('a.cortana__export_k_button__button');
 
-
-
-
-                button_l.on('click', function(e){
-                    e.preventDefault();
-                    console.log('llllll');
+                $('a.cortana__export_l_button__button').on('click', function(){
+                    console.log('lllll');
                 });
-                button_m.on('click', function(e){
-                    e.preventDefault();
-                    console.log('mmmmmm');
+                $('a.cortana__export_m_button__button').on('click', function(){
+                    console.log('mmmmmmm');
                 });
+                $('body').on('click', function(e){
+                    console.log('bodyyyy');
+                })
+
+
 
                 button_a.on('click', function(e){
                     e.preventDefault();
