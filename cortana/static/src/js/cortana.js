@@ -70,11 +70,11 @@ $(function() {
 odoo.define('cortana__export_button.listview_button', function (require) {
     'use strict';
     console.log('hi list');
-    $('button.cortana__export_l_button__button').on('click', function(e){
+    $(document).on('click', '.cortana__export_l_button__button', function(e){
         e.preventDefault();
         console.log('lllllll');
     });
-    $('button.cortana__export_m_button__button').on('click', function(e){
+    $(document).on('click', '.cortana__export_m_button__button', function(e){
         e.preventDefault();
         console.log('mmmmmmm');
     });
