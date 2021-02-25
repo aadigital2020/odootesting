@@ -70,26 +70,41 @@ $(function() {
 odoo.define('cortana__export_button.listview_button', function (require) {
     'use strict';
     console.log('hi list');
-    var params = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for (var i = 0; i < hashes.length; i++){
-        hash = hashes[i].split('=');
-        params.push(hash[0]);
-        params[hash[0]] = hash[1];
-    }
+   
     console.log(params);
     $(document).on('click', '.cortana__export_l_button__button', function(e){
         e.preventDefault();
+        var params = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for (var i = 0; i < hashes.length; i++){
+            hash = hashes[i].split('=');
+            params.push(hash[0]);
+            params[hash[0]] = hash[1];
+        }
         var url = 'https://uat.aa-testing.com/cortana/export-l/' +  params['id'];
         window.location.href = url;
     });
     $(document).on('click', '.cortana__export_m_button__button', function(e){
         e.preventDefault();
+        var params = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for (var i = 0; i < hashes.length; i++){
+            hash = hashes[i].split('=');
+            params.push(hash[0]);
+            params[hash[0]] = hash[1];
+        }
         var url = 'https://uat.aa-testing.com/cortana/export-m/' +  params['id'];
         window.location.href = url;
     });
     $(document).on('click', '.cortana__export_1_button__button', function(e){
         e.preventDefault();
+        var params = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for (var i = 0; i < hashes.length; i++){
+            hash = hashes[i].split('=');
+            params.push(hash[0]);
+            params[hash[0]] = hash[1];
+        }
         var url = 'https://uat.aa-testing.com/cortana/export-1/' +  params['id'];
         window.location.href = url;
     });
