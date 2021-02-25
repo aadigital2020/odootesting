@@ -58,13 +58,7 @@
                 console.log('123');
             </script>
         </t>
-        <t t-if = "widget.modelName == 'x_this_is_tour_123'">
-            <t t-set="head">
-                <script>
-                    console.log('asjodas');
-                </script>
-            </t>
-        </t>
+
         <t t-jquery="div.o_form_buttons_view" t-operation="append">
         
             <t t-if = "widget.modelName == 'x_this_is_tour_123'">
@@ -74,9 +68,11 @@
                 <button type="button" class="btn btn-primary cortana__export_m_button__button" >
                     酒店預約
                 </button>
-                <script>
-                    console.log('asjodas');
-                </script>
+                 <t t-set="head">
+                    <script>
+                        console.log('2312312');
+                    </script>
+                </t>
             </t>
         </t>
     </t>
