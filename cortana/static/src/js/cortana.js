@@ -117,6 +117,29 @@ odoo.define('cortana__export_button.listview_button', function (require) {
         var url = 'https://uat.aa-testing.com/cortana/export-1/' +  params['id'];
         window.location.href = url;
     });
+    $(document).on('click', '.cortana__export_2_button__button', function(e){
+        e.preventDefault();
+        var params = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('#') + 1).split('&');
+        for (var i = 0; i < hashes.length; i++){
+            hash = hashes[i].split('=');
+            params.push(hash[0]);
+            params[hash[0]] = hash[1];
+        }
+        console.log(params);
+        var category = $('[name="x_studio__3"]').attr('raw-value');
+        if (category == '單訂房'){
+            var url = 'https://uat.aa-testing.com/cortana/export-2/' +  params['id'];
+        }
+        if (category == '單機票'){
+            var url = 'https://uat.aa-testing.com/cortana/export-3/' +  params['id'];
+        }
+        if (category == '單門票'){
+            var url = 'https://uat.aa-testing.com/cortana/export-4/' +  params['id'];
+        }
+        
+        window.location.href = url;
+    });
     var core = require('web.core');
     var ListView = require('web.ListView');
     var ListRenderer = require('web.ListRenderer');

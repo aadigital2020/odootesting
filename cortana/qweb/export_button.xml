@@ -70,7 +70,16 @@
         <t t-jquery="div.o_form_buttons_view" t-operation="append">
             <t t-if = "widget.modelName == 'x_in_bound_tour'">
                 <button type="button" class="btn btn-primary cortana__export_1_button__button" >
-                    旅客發票
+                    旅客收據
+                </button>            
+            </t>
+        </t>
+    </t>
+    <t t-extend="FormView.buttons">
+        <t t-jquery="div.o_form_buttons_view" t-operation="append">
+            <t t-if = "widget.modelName == 'sale.order'">
+                <button type="button" class="btn btn-primary cortana__export_2_button__button" >
+                    發票
                 </button>            
             </t>
         </t>
