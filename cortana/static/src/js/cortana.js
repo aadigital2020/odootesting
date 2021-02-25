@@ -151,6 +151,20 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 var button_j = this.$buttons.find('a.cortana__export_j_button__button');
                 var button_k = this.$buttons.find('a.cortana__export_k_button__button');
 
+
+                var button_l = this.$buttons.find('a.cortana__export_l_button__button');
+                var button_m = this.$buttons.find('a.cortana__export_m_button__button');
+
+
+                button_l.on('click', function(e){
+                    e.preventDefault();
+                    console.log('llllll');
+                });
+                button_m.on('click', function(e){
+                    e.preventDefault();
+                    console.log('mmmmmm');
+                });
+
                 button_a.on('click', function(e){
                     e.preventDefault();
                     window.location.href='https://uat.aa-testing.com/cortana/export';
