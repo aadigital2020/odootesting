@@ -76,8 +76,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
     var ListRenderer = require('web.ListRenderer');
     var ListModel = require('web.ListModel');
     var ListController = require('web.ListController');
-    var FormModel = require('web.FormModel');
-    var FormController = require('web.FormController');
+
 
 
   
@@ -148,18 +147,6 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 var button_i = this.$buttons.find('button.cortana__export_i_button__button');
                 var button_j = this.$buttons.find('a.cortana__export_j_button__button');
                 var button_k = this.$buttons.find('a.cortana__export_k_button__button');
-
-                $('button.cortana__export_l_button__button').on('click', function(){
-                    console.log('lllll');
-                });
-                $('button.cortana__export_m_button__button').on('click', function(){
-                    console.log('mmmmmmm');
-                });
-                $('body').on('click', function(e){
-                    console.log('bodyyyy');
-                })
-
-
 
                 button_a.on('click', function(e){
                     e.preventDefault();
