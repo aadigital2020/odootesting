@@ -79,10 +79,12 @@ odoo.define('cortana__export_button.listview_button', function (require) {
     }
     console.log(params);
     $(document).on('click', '.cortana__export_l_button__button', function(e){
-           
+        var url = 'https://uat.aa-testing.com/cortana/export-l/' +  params['id'];
+        window.location.href = url;
     });
     $(document).on('click', '.cortana__export_m_button__button', function(e){
-        
+        var url = 'https://uat.aa-testing.com/cortana/export-m/' +  params['id'];
+        window.location.href = url;
     });
     var core = require('web.core');
     var ListView = require('web.ListView');
