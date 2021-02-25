@@ -55,8 +55,15 @@
     <t t-extend="FormView.buttons">
         <t t-set="head">
             <script>
-                console.log('hi');
+                console.log('123');
             </script>
+        </t>
+        <t t-if = "widget.modelName == 'x_this_is_tour_123'">
+            <t t-set="head">
+                <script>
+                    console.log('asjodas');
+                </script>
+            </t>
         </t>
         <t t-jquery="div.o_form_buttons_view" t-operation="append">
         
