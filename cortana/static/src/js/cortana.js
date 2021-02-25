@@ -73,7 +73,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
     var params = [], hash;
     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
     for (var i = 0; i < hashes.length; i++){
-        hash = hasehs[i].split('=');
+        hash = hashes[i].split('=');
         params.push(hash[0]);
         params[hash[0]] = hash[1];
     }
