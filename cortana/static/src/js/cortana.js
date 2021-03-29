@@ -315,11 +315,11 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     $('tbody input:checked').each(function(){
                         select_id.push($(this).closest('tr').attr('data-model-id'));
                     });
-                    var url = 'https://uat.aa-testing.com/cortana/export-i?id_array=';
+                    var url = 'https://uat.aa-testing.com/cortana/export-i?id_array=[';
                     if(select_id && select_id.length > 0)
                     {
                         for(var i = 0; i < select_id.length; i++){
-                            url = url+str_arr[0];
+                            url = url+str_arr[0]+']';
                             window.open(url);
                         }
                     }
