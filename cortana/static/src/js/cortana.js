@@ -319,7 +319,8 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     if(select_id && select_id.length > 0)
                     {
                         str_arr = JSON.stringify(select_id);
-                        window.location.href = url + str_arr;
+                        url = url+str_arr;
+                        window.open(url);
                     }
                 });
                 button_j.on('click', function(e){
