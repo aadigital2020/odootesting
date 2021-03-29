@@ -319,7 +319,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     if(select_id && select_id.length > 0)
                     {
                         for(var i = 0; i < select_id.length; i++){
-                            url = url+str_arr[0]+']';
+                            url = url+select_id[i]+']';
                             window.open(url);
                         }
                     }
