@@ -1,5 +1,5 @@
 <odoo>
-    <template id="assets_common" inherit_id="web.assets_common">
+    <template id="cortana_web_assets_common" inherit_id="web.assets_common">
         <xpath expr="//script[last()]" position="after">
             <script type="text/javascript" src="/cortana/static/src/js/cortana.js"/>
         </xpath>
