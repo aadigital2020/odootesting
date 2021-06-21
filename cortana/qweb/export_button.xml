@@ -6,6 +6,81 @@
                 <button type="button" class="btn btn-primary cortana__export_button__button">
                     Export
                 </button>
+                <div class="dropdown" style="display:inline-block;">
+                    <button type="button" class="btn btn-primary dropdown-toggle cortana__export_a_to_d_button__button" id="dropdownMenuButton_a" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        日程表
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton_a">
+                        <a href="#" class="dropdown-item cortana__export_a_button__button">每日日程表</a>
+                        <a href="#" class="dropdown-item cortana__export_b_button__button">導遊日程表</a>
+                        <a href="#" class="dropdown-item cortana__export_c_button__button">團隊日程表</a>
+                        <a href="#" class="dropdown-item cortana__export_d_button__button">簡易日程表</a>
+                    </div>
+                </div>
+                <div class="dropdown" style="display:inline-block;">
+                    <button type="button" class="btn btn-primary dropdown-toggle cortana__export_e_to_f_button__button" id="dropdownMenuButton_b" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        導遊文檔
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton_b">
+                        <a href="#" class="dropdown-item cortana__export_e_button__button">導遊通知</a>
+                        <a href="#" class="dropdown-item cortana__export_f_button__button">導遊報數</a>
+                    </div>
+                </div>
+                <div class="dropdown" style="display:inline-block;">
+                    <button type="button" class="btn btn-primary dropdown-toggle cortana__export_g_to_h_button__button" id="dropdownMenuButton_c" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        接送列表
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton_c">
+                        <a href="#" class="dropdown-item cortana__export_g_button__button">送團列表</a>
+                        <a href="#" class="dropdown-item cortana__export_h_button__button">接團列表</a>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-primary cortana__export_i_button__button" >
+                    確認合同
+                </button>
+
+                <div class="dropdown" style="display:inline-block;">
+                    <button type="button" class="btn btn-primary dropdown-toggle cortana__export_j_to_k_button__button" id="dropdownMenuButton_e" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        TIC
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton_e">
+                        <a href="#" class="dropdown-item cortana__export_j_button__button">TIC確認書</a>
+                        <a href="#" class="dropdown-item cortana__export_k_button__button">TIC行程表</a>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </t>
+    <t t-extend="FormView.buttons">
+        <t t-jquery="div.o_form_buttons_view" t-operation="append">
+        
+            <t t-if = "widget.modelName == 'x_this_is_tour_123'">
+                <button type="button" class="btn btn-primary cortana__export_l_button__button" >
+                    發票
+                </button>
+                <button type="button" class="btn btn-primary cortana__export_m_button__button" >
+                    酒店預約
+                </button>
+                
+            </t>
+        </t>
+    </t>
+    <t t-extend="FormView.buttons">
+        <t t-jquery="div.o_form_buttons_view" t-operation="append">
+            <t t-if = "widget.modelName == 'x_in_bound_tour'">
+                <button type="button" class="btn btn-primary cortana__export_1_button__button" >
+                    旅客收據
+                </button>            
+            </t>
+        </t>
+    </t>
+    <t t-extend="FormView.buttons">
+        <t t-jquery="div.o_form_buttons_view" t-operation="append">
+            <t t-if = "widget.modelName == 'sale.order'">
+                <button type="button" class="btn btn-primary cortana__export_2_button__button" >
+                    發票
+                </button>            
             </t>
         </t>
     </t>
