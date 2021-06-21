@@ -5,7 +5,6 @@ var append_preview_container = function() {
     }
 }
 
-
 var cortana_preview_button_event_handler = function(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -68,9 +67,7 @@ $(function() {
 })
 
 odoo.define('cortana__export_button.listview_button', function (require) {
-    'use strict';
-    console.log('hi list');
-   
+    'use strict';   
     $(document).on('click', '.cortana__export_l_button__button', function(e){
         e.preventDefault();
         var params = [], hash;
@@ -146,9 +143,6 @@ odoo.define('cortana__export_button.listview_button', function (require) {
     var ListModel = require('web.ListModel');
     var ListController = require('web.ListController');
 
-
-
-  
     // ListView.include({
     //     init: function() {
     //         this._super.apply(this, arguments);
@@ -356,7 +350,6 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     }
                 });
             }
-        
         },
         action: function() {
             // Call Ajax
