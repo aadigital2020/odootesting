@@ -210,11 +210,8 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 var button_j = this.$buttons.find('a.cortana__export_j_button__button');
                 var button_k = this.$buttons.find('a.cortana__export_k_button__button');
                 var button_n3_inbound = this.$buttons.find('a.cortana__export_n3_inbound_button__button');
-                var button_n3_outbound = this.$buttons.find('a.cortana__export_n3_outbound_button__button');
                 var button_n4_inbound = this.$buttons.find('a.cortana__export_n4_inbound_button__button');
-                var button_n4_outbound = this.$buttons.find('a.cortana__export_n4_outbound_button__button');
                 var button_n5_inbound = this.$buttons.find('a.cortana__export_n5_inbound_button__button');
-                var button_n5_outbound = this.$buttons.find('a.cortana__export_n5_outbound__button__button');
                 
                 button_a.on('click', function(e){
                     e.preventDefault();
@@ -405,6 +402,100 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                         window.location.href = url;
                     }
                 })
+            }
+            if(this.modelName === 'x_in_bound_tour' )
+            {
+                var button_n3_outbound = this.$buttons.find('a.cortana__export_n3_outbound_button__button');
+                var button_n4_outbound = this.$buttons.find('a.cortana__export_n4_outbound_button__button');
+                var button_n5_outbound = this.$buttons.find('a.cortana__export_n5_outbound__button__button');
+                button_n3_outbound.on('click', function(e){
+                    e.preventDefault();
+                    var queryString = '';
+                    var from = null;
+                    var to = null;
+                    $('.o_facet_value').each(function(index, el) {
+                        var text = $(el).html().trim();
+                        console.log(text);
+                        if (text.startsWith('出發日期 is between')) {
+                            var raw_date = text.replace('出發日期 is between', '').replace('and', '-').replaceAll('"', '').replaceAll(' ', '');
+                            var date_array = raw_date.split('-');
+                            from = date_array[0];
+                            to = date_array[1]
+                            queryString = '?from=' + from + '&to=' + to + '&outbound=true';
+                            return false;
+                        }
+                    });
+                    if (from != null && to != null){
+                    var url = 'https://uat.aa-testing.com/cortana/export-n3' +  queryString;
+                        window.location.href = url;
+                    }
+                });
+                button_n3_outbound.on('click', function(e){
+                    e.preventDefault();
+                    var queryString = '';
+                    var from = null;
+                    var to = null;
+                    $('.o_facet_value').each(function(index, el) {
+                        var text = $(el).html().trim();
+                        console.log(text);
+                        if (text.startsWith('出發日期 is between')) {
+                            var raw_date = text.replace('出發日期 is between', '').replace('and', '-').replaceAll('"', '').replaceAll(' ', '');
+                            var date_array = raw_date.split('-');
+                            from = date_array[0];
+                            to = date_array[1]
+                            queryString = '?from=' + from + '&to=' + to + '&outbound=true';
+                            return false;
+                        }
+                    });
+                    if (from != null && to != null){
+                    var url = 'https://uat.aa-testing.com/cortana/export-n3' +  queryString;
+                        window.location.href = url;
+                    }
+                });
+                button_n4_outbound.on('click', function(e){
+                    e.preventDefault();
+                    var queryString = '';
+                    var from = null;
+                    var to = null;
+                    $('.o_facet_value').each(function(index, el) {
+                        var text = $(el).html().trim();
+                        console.log(text);
+                        if (text.startsWith('出發日期 is between')) {
+                            var raw_date = text.replace('出發日期 is between', '').replace('and', '-').replaceAll('"', '').replaceAll(' ', '');
+                            var date_array = raw_date.split('-');
+                            from = date_array[0];
+                            to = date_array[1]
+                            queryString = '?from=' + from + '&to=' + to + '&outbound=true';
+                            return false;
+                        }
+                    });
+                    if (from != null && to != null){
+                    var url = 'https://uat.aa-testing.com/cortana/export-n4' +  queryString;
+                        window.location.href = url;
+                    }
+                });
+                button_n5_outbound.on('click', function(e){
+                    e.preventDefault();
+                    var queryString = '';
+                    var from = null;
+                    var to = null;
+                    $('.o_facet_value').each(function(index, el) {
+                        var text = $(el).html().trim();
+                        console.log(text);
+                        if (text.startsWith('出發日期 is between')) {
+                            var raw_date = text.replace('出發日期 is between', '').replace('and', '-').replaceAll('"', '').replaceAll(' ', '');
+                            var date_array = raw_date.split('-');
+                            from = date_array[0];
+                            to = date_array[1]
+                            queryString = '?from=' + from + '&to=' + to + '&outbound=true';
+                            return false;
+                        }
+                    });
+                    if (from != null && to != null){
+                    var url = 'https://uat.aa-testing.com/cortana/export-n5' +  queryString;
+                        window.location.href = url;
+                    }
+                });
             }
         },
         action: function() {
