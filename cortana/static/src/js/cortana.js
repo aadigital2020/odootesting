@@ -405,9 +405,9 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             }
             if(this.modelName === 'x_in_bound_tour' )
             {
-                var button_n3_outbound = this.$buttons.find('a.cortana__export_n3_outbound_button__button');
-                var button_n4_outbound = this.$buttons.find('a.cortana__export_n4_outbound_button__button');
-                var button_n5_outbound = this.$buttons.find('a.cortana__export_n5_outbound__button__button');
+                var button_n3_outbound = this.$buttons.find('button.cortana__export_n3_outbound_button__button');
+                var button_n4_outbound = this.$buttons.find('button.cortana__export_n4_outbound_button__button');
+                var button_n5_outbound = this.$buttons.find('button.cortana__export_n5_outbound__button__button');
                 button_n3_outbound.on('click', function(e){
                     e.preventDefault();
                     var queryString = '';
