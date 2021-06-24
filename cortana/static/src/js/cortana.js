@@ -377,7 +377,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                             return false;
                         }
                     });
-                    if (date != null){
+                    if (from != null && to != null){
                     var url = 'https://uat.aa-testing.com/cortana/export-n1' +  queryString;
                         window.location.href = url;
                     }
@@ -400,8 +400,8 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                             return false;
                         }
                     });
-                    if (date != null){
-                    var url = 'https://uat.aa-testing.com/cortana/export-n2' +  queryString;
+                    if (from != null && to != null){
+                        var url = 'https://uat.aa-testing.com/cortana/export-n2' +  queryString;
                         window.location.href = url;
                     }
                 })
