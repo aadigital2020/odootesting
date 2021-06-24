@@ -48,13 +48,13 @@
                         <a href="#" class="dropdown-item cortana__export_j_button__button">TIC確認書</a>
                         <a href="#" class="dropdown-item cortana__export_k_button__button">TIC行程表</a>
                     </div>
-                    <button type="button" class="dropdown-item cortana__export_n3_inbound_button__button">
+                    <button type="button" class="btn btn-primary cortana__export_n3_inbound_button__button">
                         團隊人數列表
                     </button>
-                    <button type="button" class="dropdown-item cortana__export_n4_inbound_button__button">
+                    <button type="button" class="btn btn-primary cortana__export_n4_inbound_button__button">
                         代理人數列表
                     </button>
-                    <button type="button" class="dropdown-item cortana__export_n5_inbound_button__button">
+                    <button type="button" class="btn btn-primary cortana__export_n5_inbound_button__button">
                         代理摘要統計
                     </button>
                 </div>
@@ -64,13 +64,13 @@
     <t t-extend="ListView.buttons">
         <t t-jquery="div.o_list_buttons" t-operation="append">
             <t t-if = "widget.modelName == 'x_in_bound_tour'">
-                <button type="button" class="dropdown-item cortana__export_n3_outbound_button__button">
+                <button type="button" class="btn btn-primary cortana__export_n3_outbound_button__button">
                     團隊人數列表
                 </button>
-                <button type="button" class="dropdown-item cortana__export_n4_outbound_button__button">
+                <button type="button" class="btn btn-primary cortana__export_n4_outbound_button__button">
                     代理人數列表
                 </button>
-                <button type="button" class="dropdown-item cortana__export_n5_outbound_button__button">
+                <button type="button" class="btn btn-primary cortana__export_n5_outbound_button__button">
                     代理摘要統計
                 </button>
             </t>
@@ -79,10 +79,10 @@
     <t t-extend="ListView.buttons">
         <t t-jquery="div.o_list_buttons" t-operation="append">
             <t t-if = "widget.modelName == 'x_report'">
-                <button type="button" class="dropdown-item cortana__export_n1_button__button">
+                <button type="button" class="btn btn-primary cortana__export_n1_button__button">
                     摘要人數列表
                 </button>
-                 <button type="button" class="dropdown-item cortana__export_n2_button__button">
+                 <button type="button" class="btn btn-primary cortana__export_n2_button__button">
                     明細人數列表
                 </button>
             </t>
