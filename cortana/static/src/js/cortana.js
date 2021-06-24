@@ -210,7 +210,15 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 var button_i = this.$buttons.find('button.cortana__export_i_button__button');
                 var button_j = this.$buttons.find('a.cortana__export_j_button__button');
                 var button_k = this.$buttons.find('a.cortana__export_k_button__button');
-
+                var button_n1 = this.$buttons.find('a.cortana__export_n1_button__button');
+                var button_n2 = this.$buttons.find('a.cortana__export_n2_button__button');
+                var button_n3_inbound = this.$buttons.find('a.cortana__export_n3_inbound_button__button');
+                var button_n3_outbound = this.$buttons.find('a.cortana__export_n3_outbound_button__button');
+                var button_n4_inbound = this.$buttons.find('a.cortana__export_n4_inbound_button__button');
+                var button_n4_outbound = this.$buttons.find('a.cortana__export_n4_outbound_button__button');
+                var button_n5_inbound = this.$buttons.find('a.cortana__export_n5_inbound_button__button');
+                var button_n5_outbound = this.$buttons.find('a.cortana__export_n5_outbound__button__button');
+                
                 button_a.on('click', function(e){
                     e.preventDefault();
                     window.location.href='https://uat.aa-testing.com/cortana/export';
@@ -349,6 +357,52 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                         window.location.href = url + str_arr;
                     }
                 });
+
+                button_n1.on('click', function(e){
+                    e.preventDefault();
+                    var queryString = '';
+                    var from = null;
+                    var to = null;
+                    $('.o_facet_value').each(function(index, el) {
+                        var text = $(el).html().trim();
+                        console.log(text);
+                        if (text.startsWith('Last Updated on is between')) {
+                            var raw_date = text.replace('Last Updated on is between ', '').replace('and', '-').replace('00:00:00', '').replace('23:59:59', '').replaceAll('"', '').replaceAll(' ', '');
+                            var date_array = raw_date.split('-');
+                            from = date_array[0];
+                            to = date_array[1]
+                            queryString = '?from=' + from + '&to=' + to;
+                            return false;
+                        }
+                    });
+                    if (date != null){
+                    var url = 'https://uat.aa-testing.com/cortana/export-n1' +  queryString;
+                        window.location.href = url;
+                    }
+                });
+
+                button_n2.on('click', function(e){
+                    e.preventDefault();
+                    var queryString = '';
+                    var from = null;
+                    var to = null;
+                    $('.o_facet_value').each(function(index, el) {
+                        var text = $(el).html().trim();
+                        console.log(text);
+                        if (text.startsWith('Last Updated on is between')) {
+                            var raw_date = text.replace('Last Updated on is between ', '').replace('and', '-').replace('00:00:00', '').replace('23:59:59', '').replaceAll('"', '').replaceAll(' ', '');
+                            var date_array = raw_date.split('-');
+                            from = date_array[0];
+                            to = date_array[1]
+                            queryString = '?from=' + from + '&to=' + to;
+                            return false;
+                        }
+                    });
+                    if (date != null){
+                    var url = 'https://uat.aa-testing.com/cortana/export-n2' +  queryString;
+                        window.location.href = url;
+                    }
+                })
             }
         },
         action: function() {
