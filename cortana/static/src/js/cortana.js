@@ -196,7 +196,6 @@ odoo.define('cortana__export_button.listview_button', function (require) {
         renderButtons: function() {
             this._super.apply(this, arguments);
             if (this.modelName === 'x_this_is_tour_123') { // Change model name
-                console.log('still work!');
                 var button = this.$buttons.find('button.cortana__export_button__button'); // Change button class
                 button.on('click', this.proxy('action'));
                 var button_a = this.$buttons.find('a.cortana__export_a_button__button');
@@ -358,7 +357,8 @@ odoo.define('cortana__export_button.listview_button', function (require) {
 
                 
             }
-            if(this.modelName === 'x_report'){
+            if (this.modelName === 'x_report') { // Change model name
+                console.log('still work!');
                 var button_n1 = this.$buttons.find('a.cortana__export_n1_button__button');
                 var button_n2 = this.$buttons.find('a.cortana__export_n2_button__button');
                 button_n1.on('click', function(e){
