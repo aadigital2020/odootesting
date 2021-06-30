@@ -243,8 +243,14 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     var url = 'https://uat.aa-testing.com/cortana/export-e?id_array=';
                     if(select_id && select_id.length > 0)
                     {
-                        str_arr = JSON.stringify(select_id);
-                        window.location.href = url + str_arr;
+                        // str_arr = JSON.stringify(select_id);
+                        // window.location.href = url + str_arr;
+                        var new_url = '';
+                        for(var i = 0; i < select_id.length; i++){
+                            
+                            new_url = url+select_id[i]+']';
+                            window.open(new_url);
+                        }
                     }
                 });
 
@@ -318,7 +324,6 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                         for(var i = 0; i < select_id.length; i++){
                             
                             new_url = url+select_id[i]+']';
-                            console.log(new_url);
                             window.open(new_url);
                         }
                     }
@@ -333,8 +338,14 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     var url = 'https://uat.aa-testing.com/cortana/export-j?id_array=';
                     if(select_id && select_id.length > 0)
                     {
-                        str_arr = JSON.stringify(select_id);
-                        window.location.href = url + str_arr;
+                        // str_arr = JSON.stringify(select_id);
+                        // window.location.href = url + str_arr;
+                        var new_url = '';
+                        for(var i = 0; i < select_id.length; i++){
+                            
+                            new_url = url+select_id[i]+']';
+                            window.open(new_url);
+                        }
                     }
                 });
                 button_k.on('click', function(e){
@@ -347,8 +358,14 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     var url = 'https://uat.aa-testing.com/cortana/export-k?id_array=';
                     if(select_id && select_id.length > 0)
                     {
-                        str_arr = JSON.stringify(select_id);
-                        window.location.href = url + str_arr;
+                        // str_arr = JSON.stringify(select_id);
+                        // window.location.href = url + str_arr;
+                        var new_url = '';
+                        for(var i = 0; i < select_id.length; i++){
+                            
+                            new_url = url+select_id[i]+']';
+                            window.open(new_url);
+                        }
                     }
                 });
 
