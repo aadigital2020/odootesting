@@ -620,4 +620,38 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             return this.do_action(action);
         }
     });
+
+    setInterval(function() {
+        var regex = /.*?model=(.*?)&/gm;
+        var str = window.location.href;
+        var m;
+        var model;
+
+        while ((m = regex.exec(str)) !== null) {
+            if (m.index === regex.lastIndex) {
+                regex.lastIndex++;
+            }
+            
+            m.forEach((match, groupIndex) => {
+                model = match;
+            });
+        }
+
+        var regex = /.*?view_type=(.*?)&/gm;
+        var str = window.location.href;
+        var m;
+        var view_type;
+
+        while ((m = regex.exec(str)) !== null) {
+            if (m.index === regex.lastIndex) {
+                regex.lastIndex++;
+            }
+            
+            m.forEach((match, groupIndex) => {
+                view_type = match;
+            });
+        }
+
+        $('html').attr('data-app-model', model).attr('data-app-view-type', view_type);
+    }, 1);
 });

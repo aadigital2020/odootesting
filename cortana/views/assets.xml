@@ -3,5 +3,8 @@
         <xpath expr="//script[last()]" position="after">
             <script type="text/javascript" src="/cortana/static/src/js/cortana.js"/>
         </xpath>
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" href="/cortana/static/src/css/cortana.css"/>
+        </xpath>
     </template>
 </odoo>
