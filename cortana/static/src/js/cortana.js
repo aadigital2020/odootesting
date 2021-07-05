@@ -71,24 +71,24 @@ odoo.define('cortana__export_button.listview_button', function (require) {
     $(function() {
         $('body').append(`
         <style>
-        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] th:nth-child(8),
         html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] th:nth-child(9),
         html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] th:nth-child(10),
-        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] td:nth-child(8),
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] th:nth-child(11),
         html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] td:nth-child(9),
-        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] td:nth-child(10) {
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] td:nth-child(10),
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] td:nth-child(11) {
             background-color: #c1d0fc;
         }
-        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] th:nth-child(11),
         html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] th:nth-child(12),
         html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] th:nth-child(13),
-        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] td:nth-child(11),
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] th:nth-child(14),
         html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] td:nth-child(12),
-        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] td:nth-child(13) {
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] td:nth-child(13),
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] td:nth-child(14) {
             background-color: #fbc8d5;
         }
-        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] th:nth-child(15),
-        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] td:nth-child(15) {
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] th:nth-child(16),
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] td:nth-child(16) {
             background-color: #c8e5c7;
         }
         </style>
