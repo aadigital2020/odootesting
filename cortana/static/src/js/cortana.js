@@ -91,6 +91,18 @@ odoo.define('cortana__export_button.listview_button', function (require) {
         html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"] td:nth-child(16) {
             background-color: #c8e5c7;
         }
+        html[data-app-model="x_in_bound_tour"][data-app-view-type="list"] th:nth-child(10),
+        html[data-app-model="x_in_bound_tour"][data-app-view-type="list"] td:nth-child(10) {
+            background-color: #c1d0fc;
+        }
+        html[data-app-model="x_in_bound_tour"][data-app-view-type="list"] th:nth-child(13),
+        html[data-app-model="x_in_bound_tour"][data-app-view-type="list"] td:nth-child(13) {
+            background-color: #fbc8d5;
+        }
+        html[data-app-model="x_in_bound_tour"][data-app-view-type="list"] th:nth-child(17),
+        html[data-app-model="x_in_bound_tour"][data-app-view-type="list"] td:nth-child(17) {
+            background-color: #c8e5c7;
+        }
         </style>
         `);
     });
