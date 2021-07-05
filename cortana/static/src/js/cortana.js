@@ -212,7 +212,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 var button_n3_inbound = this.$buttons.find('button.cortana__export_n3_inbound_button__button');
                 var button_n4_inbound = this.$buttons.find('button.cortana__export_n4_inbound_button__button');
                 var button_n5_inbound = this.$buttons.find('button.cortana__export_n5_inbound_button__button');
-                var button_inbound_check = this.$buttons.find('cortana__export_inbound_check_button__button');
+                var button_inbound_check = this.$buttons.find('button.cortana__export_inbound_check_button__button');
 
                 button_a.on('click', function(e){
                     e.preventDefault();
@@ -439,14 +439,13 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 button_inbound_check.on('click', function(e){
                     e.preventDefault();
                     var select_id = [];
-                    var str_arr = '';
                     $('tbody input:checked').each(function(){
                         select_id.push($(this).closest('tr').attr('data-model-id'));
                     });
-                    var url = 'https://uat.aa-testing.com/cortana/export-inbound-check';
+                    var url = 'https://uat.aa-testing.com/cortana/export-inbound-check/';
                     if(select_id && select_id.length > 0)
                     {
-                        window.location.href = url + '/' + select_id[0];
+                        window.location.href = url + select_id[0];
                     }
                 });
 
@@ -506,7 +505,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 var button_n3_outbound = this.$buttons.find('button.cortana__export_n3_outbound_button__button');
                 var button_n4_outbound = this.$buttons.find('button.cortana__export_n4_outbound_button__button');
                 var button_n5_outbound = this.$buttons.find('button.cortana__export_n5_outbound_button__button');
-                var button_outbound_check = this.$buttons.find('cortana__export_outbound_check_button__button');
+                var button_outbound_check = this.$buttons.find('button.cortana__export_outbound_check_button__button');
 
                 button_n3_outbound.on('click', function(e){
                     e.preventDefault();
@@ -577,14 +576,13 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 button_outbound_check.on('click', function(e){
                     e.preventDefault();
                     var select_id = [];
-                    var str_arr = '';
                     $('tbody input:checked').each(function(){
                         select_id.push($(this).closest('tr').attr('data-model-id'));
                     });
                     var url = 'https://uat.aa-testing.com/cortana/export-outbound-check/';
                     if(select_id && select_id.length > 0)
                     {
-                        window.location.href = url + '/' + select_id[0];
+                        window.location.href = url + select_id[0];
                     }
                 })
             }
