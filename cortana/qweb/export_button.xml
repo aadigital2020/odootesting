@@ -58,6 +58,9 @@
                         代理摘要統計
                     </button>
                 </div>
+                <button type="button" class="btn btn-primary cortana__export_inbound_check_button__button" >
+                    行政速查
+                </button>
             </t>
         </t>
     </t>
@@ -72,6 +75,9 @@
                 </button>
                 <button type="button" class="btn btn-primary cortana__export_n5_outbound_button__button">
                     代理摘要統計
+                </button>
+                <button type="button" class="btn btn-primary cortana__export_outbound_check_button__button" >
+                    行政速查
                 </button>
             </t>
         </t>
