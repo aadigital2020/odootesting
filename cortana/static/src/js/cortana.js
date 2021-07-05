@@ -212,7 +212,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 var button_n3_inbound = this.$buttons.find('button.cortana__export_n3_inbound_button__button');
                 var button_n4_inbound = this.$buttons.find('button.cortana__export_n4_inbound_button__button');
                 var button_n5_inbound = this.$buttons.find('button.cortana__export_n5_inbound_button__button');
-                var button_inbound_check = this.$buttons.find('cortana__export_inbound_check_button__button');
+                var button_inbound_check = this.$buttons.find('button.cortana__export_inbound_check_button__button');
 
                 button_a.on('click', function(e){
                     e.preventDefault();
@@ -506,7 +506,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 var button_n3_outbound = this.$buttons.find('button.cortana__export_n3_outbound_button__button');
                 var button_n4_outbound = this.$buttons.find('button.cortana__export_n4_outbound_button__button');
                 var button_n5_outbound = this.$buttons.find('button.cortana__export_n5_outbound_button__button');
-                var button_outbound_check = this.$buttons.find('cortana__export_outbound_check_button__button');
+                var button_outbound_check = this.$buttons.find('button.cortana__export_outbound_check_button__button');
 
                 button_n3_outbound.on('click', function(e){
                     e.preventDefault();
