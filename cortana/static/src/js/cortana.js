@@ -438,7 +438,6 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 });
                 button_inbound_check.on('click', function(e){
                     e.preventDefault();
-                    console.log('hi');
                     var select_id = [];
                     $('tbody input:checked').each(function(){
                         select_id.push($(this).closest('tr').attr('data-model-id'));
