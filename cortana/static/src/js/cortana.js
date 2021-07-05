@@ -438,15 +438,15 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 });
                 button_inbound_check.on('click', function(e){
                     e.preventDefault();
+                    console.log('hi');
                     var select_id = [];
-                    var str_arr = '';
                     $('tbody input:checked').each(function(){
                         select_id.push($(this).closest('tr').attr('data-model-id'));
                     });
-                    var url = 'https://uat.aa-testing.com/cortana/export-inbound-check';
+                    var url = 'https://uat.aa-testing.com/cortana/export-inbound-check/';
                     if(select_id && select_id.length > 0)
                     {
-                        window.location.href = url + '/' + select_id[0];
+                        window.location.href = url + select_id[0];
                     }
                 });
 
@@ -577,14 +577,13 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 button_outbound_check.on('click', function(e){
                     e.preventDefault();
                     var select_id = [];
-                    var str_arr = '';
                     $('tbody input:checked').each(function(){
                         select_id.push($(this).closest('tr').attr('data-model-id'));
                     });
                     var url = 'https://uat.aa-testing.com/cortana/export-outbound-check/';
                     if(select_id && select_id.length > 0)
                     {
-                        window.location.href = url + '/' + select_id[0];
+                        window.location.href = url + select_id[0];
                     }
                 })
             }
