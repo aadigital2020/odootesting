@@ -703,6 +703,6 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             });
         }
 
-        $('html').attr('data-app-model', model).attr('data-app-view-type', view_type).attr('data-app-tudio', studio);
+        $('html').attr('data-app-model', model).attr('data-app-view-type', view_type).attr('data-app-studio', studio);
     }, 1);
 });
