@@ -67,7 +67,45 @@ $(function() {
 })
 
 odoo.define('cortana__export_button.listview_button', function (require) {
-    'use strict';   
+    'use strict';  
+    $(function() {
+        $('body').append(`
+        <style>
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"][data-app-studio="ok"] th:nth-child(9),
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"][data-app-studio="ok"] th:nth-child(10),
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"][data-app-studio="ok"] th:nth-child(11),
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"][data-app-studio="ok"] td:nth-child(9),
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"][data-app-studio="ok"] td:nth-child(10),
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"][data-app-studio="ok"] td:nth-child(11) {
+            background-color: #c1d0fc;
+        }
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"][data-app-studio="ok"] th:nth-child(12),
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"][data-app-studio="ok"] th:nth-child(13),
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"][data-app-studio="ok"] th:nth-child(14),
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"][data-app-studio="ok"] td:nth-child(12),
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"][data-app-studio="ok"] td:nth-child(13),
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"][data-app-studio="ok"] td:nth-child(14) {
+            background-color: #fbc8d5;
+        }
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"][data-app-studio="ok"] th:nth-child(16),
+        html[data-app-model="x_this_is_tour_123"][data-app-view-type="list"][data-app-studio="ok"] td:nth-child(16) {
+            background-color: #c8e5c7;
+        }
+        html[data-app-model="x_in_bound_tour"][data-app-view-type="list"][data-app-studio="ok"] th:nth-child(10),
+        html[data-app-model="x_in_bound_tour"][data-app-view-type="list"][data-app-studio="ok"] td:nth-child(10) {
+            background-color: #c1d0fc;
+        }
+        html[data-app-model="x_in_bound_tour"][data-app-view-type="list"][data-app-studio="ok"] th:nth-child(13),
+        html[data-app-model="x_in_bound_tour"][data-app-view-type="list"][data-app-studio="ok"] td:nth-child(13) {
+            background-color: #fbc8d5;
+        }
+        html[data-app-model="x_in_bound_tour"][data-app-view-type="list"][data-app-studio="ok"] th:nth-child(17),
+        html[data-app-model="x_in_bound_tour"][data-app-view-type="list"][data-app-studio="ok"] td:nth-child(17) {
+            background-color: #c8e5c7;
+        }
+        </style>
+        `);
+    });
     $(document).on('click', '.cortana__export_l_button__button', function(e){
         e.preventDefault();
         var params = [], hash;
@@ -635,7 +673,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             });
         }
 
-        var regex = /.*?view_type=(.*?)&/gm;
+        var regex = /.*?view_type=(.*)/gm;
         var str = window.location.href;
         var m;
         var view_type;
@@ -650,6 +688,21 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             });
         }
 
-        $('html').attr('data-app-model', model).attr('data-app-view-type', view_type);
+        var regex = /.*?studio=(.*?)\#/gm;
+        var str = window.location.href;
+        var m;
+        var studio = 'ok';
+
+        while ((m = regex.exec(str)) !== null) {
+            if (m.index === regex.lastIndex) {
+                regex.lastIndex++;
+            }
+            
+            m.forEach((match, groupIndex) => {
+                studio = match;
+            });
+        }
+
+        $('html').attr('data-app-model', model).attr('data-app-view-type', view_type).attr('data-app-studio', studio);
     }, 1);
 });
