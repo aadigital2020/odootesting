@@ -37,7 +37,7 @@
                 </div>
 
                 <button type="button" class="btn btn-primary cortana__export_i_button__button" >
-                    確認合同
+                    團體確認合同
                 </button>
 
                 <div class="dropdown" style="display:inline-block;">
