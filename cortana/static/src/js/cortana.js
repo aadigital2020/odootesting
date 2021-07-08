@@ -349,7 +349,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
 
                 button_g.on('click', function(e){
                     e.preventDefault();
-                    $('.popup-window').fadeOut();
+                    $('.popup-window').fadeIn();
                     // var queryString = '';
                     // var date = null;
                     // $('.o_facet_value').each(function(index, el) {
