@@ -239,18 +239,28 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 <style>
                     .popup-window{
                         display:none;
+                        position: absolute;
+                        z-index: 1000;
+                        background-color: #dcdcdc;
+                    }
+                    .popup-inner{
+                        max-width: 700px;
+                        margin: 0 auto;
                     }
                 </style>
                 <div class="popup-window">
-                    <div>
-                        <div style="display:inline-block; width:29%">起始日期</div>
-                        <div style="display:inline-block; width:70%"><input type="date" name="start_date"></div>
+                    <div class="popup-inner">
+                        <input type="hidden" value>
+                        <div>
+                            <div style="display:inline-block; width:29%">起始日期</div>
+                            <div style="display:inline-block; width:70%"><input type="date" name="start_date"></div>
+                        </div>
+                        <div>
+                            <div style="display:inline-block; width:29%">結束日期</div>
+                            <div style="display:inline-block; width:70%"><input type="date" name="end_date"></div>
+                        </div>
+                        <button type="button">Export</button>
                     </div>
-                    <div>
-                        <div style="display:inline-block; width:29%">結束日期</div>
-                        <div style="display:inline-block; width:70%"><input type="date" name="end_date"></div>
-                    </div>
-                    <button type="button">Export</button>
                 </div>`
                 );
                 var button = this.$buttons.find('button.cortana__export_button__button'); // Change button class
@@ -329,6 +339,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
 
                 button_g.on('click', function(e){
                     e.preventDefault();
+                    $('.popup-window').show();
                     // var queryString = '';
                     // var date = null;
                     // $('.o_facet_value').each(function(index, el) {
