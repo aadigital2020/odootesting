@@ -257,12 +257,8 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     <div class="popup-inner">
                         <input type="hidden" value="" id="hidden_form_id">
                         <div>
-                            <div style="display:inline-block; width:29%">起始日期</div>
-                            <div style="display:inline-block; width:70%"><input type="date" name="start_date"></div>
-                        </div>
-                        <div>
-                            <div style="display:inline-block; width:29%">結束日期</div>
-                            <div style="display:inline-block; width:70%"><input type="date" name="end_date"></div>
+                            <div style="display:inline-block; width:29%">選擇日期</div>
+                            <div style="display:inline-block; width:70%"><input type="date" name="context"></div>
                         </div>
                         <button type="button" class="btn btn-primary">Export</button>
                     </div>
@@ -294,10 +290,11 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 })
                 $('.popup-inner button').on('click', function(e){
                     e.preventDefault();
-                    var start = $('[name="start_date"]').val();
-                    var end = $('[name="end_date"]').val();
+                    var url = $('#hidden_form_id').val();
+                    var date = $('[name="context"]').val();
                     if (start && end){
-                        var url = 'https://uat.aa-testing.com/cortana/export-g' +  queryString;
+                        url = url + '?context=' + date;
+                        console.log(url);
                         window.location.href = url;
                     }
                     
