@@ -292,9 +292,11 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     e.preventDefault();
                     var url = $('#hidden_form_id').val();
                     var date = $('[name="context"]').val();
-                    if (start && end){
+                    if (date){
                         url = url + '?context=' + date;
                         console.log(url);
+                        window.location.href = url;
+                    }else{
                         window.location.href = url;
                     }
                     
