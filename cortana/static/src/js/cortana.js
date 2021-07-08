@@ -325,7 +325,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     var end = $('[name="end_date"]').val();
 
                     if (start && end){
-                        url = url + '?from=' + start + '&to=' + end;
+                        url = url + '?inbound=true&from=' + start + '&to=' + end;
                         console.log(url);
                         window.location.href = url;
                     }
