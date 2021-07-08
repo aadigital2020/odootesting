@@ -708,8 +708,6 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             return res;
         }, {});
 
-        console.log(result);
-
-        // $('html').attr('data-app-model', model).attr('data-app-view-type', view_type).attr('data-app-studio', studio);
+        $('html').attr('data-app-model', result.model).attr('data-app-view-type', result.view_type).attr('data-app-studio', result.studio == undefined ? 'ok' : result.studio);
     }, 1);
 });
