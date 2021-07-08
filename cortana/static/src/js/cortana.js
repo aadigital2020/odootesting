@@ -701,13 +701,15 @@ odoo.define('cortana__export_button.listview_button', function (require) {
 
     setInterval(function() {
         var hash = window.location.hash.substr(1);
-
         var result = hash.split('&').reduce(function (res, item) {
             var parts = item.split('=');
             res[parts[0]] = parts[1];
             return res;
         }, {});
 
-        $('html').attr('data-app-model', result.model).attr('data-app-view-type', result.view_type).attr('data-app-studio', result.studio == undefined ? 'ok' : result.studio);
+        var urlSearchParams = new URLSearchParams(window.location.search);
+        var params = Object.fromEntries(urlSearchParams.entries());
+
+        $('html').attr('data-app-model', result.model).attr('data-app-view-type', result.view_type).attr('data-app-studio', params.studio == undefined ? 'ok' : params.studio);
     }, 1);
 });
