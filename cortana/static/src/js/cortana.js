@@ -262,7 +262,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                             <div style="display:inline-block; width:29%">結束日期</div>
                             <div style="display:inline-block; width:70%"><input type="date" name="end_date"></div>
                         </div>
-                        <button type="button">Export</button>
+                        <button type="button" class="btn btn-primary">Export</button>
                     </div>
                 </div>`
                 );
