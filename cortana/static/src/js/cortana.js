@@ -241,10 +241,13 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                         display:none;
                         position: absolute;
                         z-index: 1000;
-                        background-color: #dcdcdc;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0,0,0,0.1);
                     }
                     .popup-inner{
-                        max-width: 700px;
+                        margin-top: 10%;
+                        max-width: 500px;
                         margin: 0 auto;
                     }
                 </style>
@@ -280,6 +283,13 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 var button_n4_inbound = this.$buttons.find('button.cortana__export_n4_inbound_button__button');
                 var button_n5_inbound = this.$buttons.find('button.cortana__export_n5_inbound_button__button');
                 var button_inbound_check = this.$buttons.find('button.cortana__export_inbound_check_button__button');
+
+                $('.popup-window').on('click', function(e){
+                    if(e.target == this)
+                    {
+                        $('.popup-window').fadeOut();
+                    }
+                })
 
                 button_a.on('click', function(e){
                     e.preventDefault();
@@ -339,7 +349,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
 
                 button_g.on('click', function(e){
                     e.preventDefault();
-                    $('.popup-window').show();
+                    $('.popup-window').fadeOut();
                     // var queryString = '';
                     // var date = null;
                     // $('.o_facet_value').each(function(index, el) {
