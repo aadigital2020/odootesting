@@ -712,71 +712,16 @@ odoo.define('cortana__export_button.listview_button', function (require) {
     });
 
     setInterval(function() {
-        var regex = /.*?model=(.*?)&/gm;
-        var str = window.location.href;
-        var m;
-        var model;
+        var hash = window.location.hash.substr(1);
+        var result = hash.split('&').reduce(function (res, item) {
+            var parts = item.split('=');
+            res[parts[0]] = parts[1];
+            return res;
+        }, {});
 
-        while ((m = regex.exec(str)) !== null) {
-            if (m.index === regex.lastIndex) {
-                regex.lastIndex++;
-            }
-            
-            m.forEach((match, groupIndex) => {
-                model = match;
-            });
-        }
+        var urlSearchParams = new URLSearchParams(window.location.search);
+        var params = Object.fromEntries(urlSearchParams.entries());
 
-        var regex = /.*?view_type=(.*?)&/gm;
-        var str = window.location.href;
-        var m;
-        var view_type;
-
-        while ((m = regex.exec(str)) !== null) {
-            if (m.index === regex.lastIndex) {
-                regex.lastIndex++;
-            }
-            
-            m.forEach((match, groupIndex) => {
-                view_type = match;
-            });
-        }
-
-        if (!view_type) {
-            var regex = /.*?view_type=(.*?)/gm;
-            var str = window.location.href;
-            var m;
-            var view_type;
-
-            while ((m = regex.exec(str)) !== null) {
-                if (m.index === regex.lastIndex) {
-                    regex.lastIndex++;
-                }
-                
-                m.forEach((match, groupIndex) => {
-                    view_type = match;
-                });
-            }
-        }
-
-        var regex = /.*?studio=(.*?)\#/gm;
-        var str = window.location.href;
-        var m;
-        var studio = 'ok';
-
-        while ((m = regex.exec(str)) !== null) {
-            if (m.index === regex.lastIndex) {
-                regex.lastIndex++;
-            }
-            
-            m.forEach((match, groupIndex) => {
-                studio = match;
-            });
-        }
-
-        console.log(model);
-        console.log(view_type);
-        console.log(studio);
-        $('html').attr('data-app-model', model).attr('data-app-view-type', view_type).attr('data-app-studio', studio);
+        $('html').attr('data-app-model', result.model).attr('data-app-view-type', result.view_type).attr('data-app-studio', params.studio == undefined ? 'ok' : params.studio);
     }, 1);
 });
