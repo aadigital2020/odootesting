@@ -713,7 +713,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             });
         }
 
-        var regex = /.*?view_type=(.*)&/gm;
+        var regex = /.*?view_type=(.*)\&/gm;
         var str = window.location.href;
         var m;
         var view_type;
@@ -726,6 +726,23 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             m.forEach((match, groupIndex) => {
                 view_type = match;
             });
+        }
+
+        if (!view_type) {
+            var regex = /.*?view_type=(.*)/gm;
+            var str = window.location.href;
+            var m;
+            var view_type;
+
+            while ((m = regex.exec(str)) !== null) {
+                if (m.index === regex.lastIndex) {
+                    regex.lastIndex++;
+                }
+                
+                m.forEach((match, groupIndex) => {
+                    view_type = match;
+                });
+            }
         }
 
         var regex = /.*?studio=(.*?)\#/gm;
@@ -743,6 +760,9 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             });
         }
 
+        console.log(model);
+        console.log(view_type);
+        console.log(studio);
         $('html').attr('data-app-model', model).attr('data-app-view-type', view_type).attr('data-app-studio', studio);
     }, 1);
 });
