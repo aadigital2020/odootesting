@@ -692,7 +692,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             });
         }
 
-        var regex = /.*?view_type=(.*)&/gm;
+        var regex = /.*?view_type=(.*)\&/gm;
         var str = window.location.href;
         var m;
         var view_type;
