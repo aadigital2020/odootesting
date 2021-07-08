@@ -310,23 +310,36 @@ odoo.define('cortana__export_button.listview_button', function (require) {
 
                 button_g.on('click', function(e){
                     e.preventDefault();
-                    var queryString = '';
-                    var date = null;
-                    $('.o_facet_value').each(function(index, el) {
-                        var text = $(el).html().trim();
-                        console.log(text);
-                        if (text.startsWith('離開日期 is equal to')) {
-                            var raw_date = text.replace('離開日期 is equal to ', '').replaceAll('"', '');
-                            var date_array = raw_date.split('/');
-                            date = date_array[2] + '-' + date_array[0] + '-' + date_array[1]; 
-                            queryString = '?date=' + date;
-                            return false;
-                        }
-                    });
-                    if (date != null){
-                    var url = 'https://uat.aa-testing.com/cortana/export-g' +  queryString;
-                        window.location.href = url;
-                    }
+                    // var queryString = '';
+                    // var date = null;
+                    // $('.o_facet_value').each(function(index, el) {
+                    //     var text = $(el).html().trim();
+                    //     console.log(text);
+                    //     if (text.startsWith('離開日期 is equal to')) {
+                    //         var raw_date = text.replace('離開日期 is equal to ', '').replaceAll('"', '');
+                    //         var date_array = raw_date.split('/');
+                    //         date = date_array[2] + '-' + date_array[0] + '-' + date_array[1]; 
+                    //         queryString = '?date=' + date;
+                    //         return false;
+                    //     }
+                    // });
+                    // if (date != null){
+                    // var url = 'https://uat.aa-testing.com/cortana/export-g' +  queryString;
+                    //     window.location.href = url;
+                    // }
+                    $('body').append(`
+                    <div class="popup-window">
+                        <div>
+                            <div style="display:inline-block; width:29%">起始日期</div>
+                            <div style="display:inline-block; width:70%"><input type="date" name="start_date"></div>
+                        </div>
+                        <div>
+                            <div style="display:inline-block; width:29%">結束日期</div>
+                            <div style="display:inline-block; width:70%"><input type="date" name="end_date"></div>
+                        </div>
+                        <button type="button">Export</button>
+                    </div>`
+                    );
                 });
 
                 button_h.on('click', function(e){
