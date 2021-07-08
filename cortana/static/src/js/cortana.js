@@ -664,6 +664,51 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             }
             if(this.modelName === 'x_in_bound_tour' )
             {
+                $('body').append(`<style>
+                    .popup-window{
+                        display:none;
+                        position: absolute;
+                        z-index: 1000;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0,0,0,0.1);
+                    }
+                    .popup-inner{
+                        max-width: 500px;
+                        margin: 0 auto;
+                        margin-top: 10%;
+                        background:rgba(255,255,255, 0.9);
+                        padding: 20px;
+                    }
+ 
+                </style>
+                <div class="popup-window">
+                    <div class="popup-inner">
+                        <input type="hidden" value="" id="hidden_form_id">
+                        <div>
+                            <div style="display:inline-block; width:29%">開始日期</div>
+                            <div style="display:inline-block; width:70%"><input type="date" name="start_date"></div>
+                        </div>
+                        <div>
+                            <div style="display:inline-block; width:29%">結束日期</div>
+                            <div style="display:inline-block; width:70%"><input type="date" name="end_date"></div>
+                        </div>
+                        <button type="button" class="btn btn-primary">Export</button>
+                    </div>
+                </div>`);
+
+                $('.popup-inner button').on('click', function(e){
+                    e.preventDefault();
+                    var url = $('#hidden_form_id').val();
+                    var start = $('[name="start_date"]').val();
+                    var end = $('[name="end_date"]').val();
+
+                    if (start && end){
+                        url = url + '?outbound=true&from=' + start + '&to=' + end;
+                        console.log(url);
+                        window.location.href = url;
+                    }
+                })
                 var button_n3_outbound = this.$buttons.find('button.cortana__export_n3_outbound_button__button');
                 var button_n4_outbound = this.$buttons.find('button.cortana__export_n4_outbound_button__button');
                 var button_n5_outbound = this.$buttons.find('button.cortana__export_n5_outbound_button__button');
@@ -671,69 +716,78 @@ odoo.define('cortana__export_button.listview_button', function (require) {
 
                 button_n3_outbound.on('click', function(e){
                     e.preventDefault();
-                    var queryString = '';
-                    var from = null;
-                    var to = null;
-                    $('.o_facet_value').each(function(index, el) {
-                        var text = $(el).html().trim();
-                        console.log(text);
-                        if (text.startsWith('出發日期 is between')) {
-                            var raw_date = text.replace('出發日期 is between', '').replace('and', '-').replaceAll('"', '').replaceAll(' ', '');
-                            var date_array = raw_date.split('-');
-                            from = date_array[0];
-                            to = date_array[1]
-                            queryString = '?from=' + from + '&to=' + to + '&outbound=true';
-                            return false;
-                        }
-                    });
-                    if (from != null && to != null){
-                    var url = 'https://uat.aa-testing.com/cortana/export-n3' +  queryString;
-                        window.location.href = url;
-                    }
+                    $('#hidden_form_id').val('https://uat.aa-testing.com/cortana/export-n3');
+                    $('.popup-inner button').text('團隊人數列表');
+                    $('.popup-window').fadeIn();
+                    // var queryString = '';
+                    // var from = null;
+                    // var to = null;
+                    // $('.o_facet_value').each(function(index, el) {
+                    //     var text = $(el).html().trim();
+                    //     console.log(text);
+                    //     if (text.startsWith('出發日期 is between')) {
+                    //         var raw_date = text.replace('出發日期 is between', '').replace('and', '-').replaceAll('"', '').replaceAll(' ', '');
+                    //         var date_array = raw_date.split('-');
+                    //         from = date_array[0];
+                    //         to = date_array[1]
+                    //         queryString = '?from=' + from + '&to=' + to + '&outbound=true';
+                    //         return false;
+                    //     }
+                    // });
+                    // if (from != null && to != null){
+                    // var url = 'https://uat.aa-testing.com/cortana/export-n3' +  queryString;
+                    //     window.location.href = url;
+                    // }
                 });
                 button_n4_outbound.on('click', function(e){
                     e.preventDefault();
-                    var queryString = '';
-                    var from = null;
-                    var to = null;
-                    $('.o_facet_value').each(function(index, el) {
-                        var text = $(el).html().trim();
-                        console.log(text);
-                        if (text.startsWith('出發日期 is between')) {
-                            var raw_date = text.replace('出發日期 is between', '').replace('and', '-').replaceAll('"', '').replaceAll(' ', '');
-                            var date_array = raw_date.split('-');
-                            from = date_array[0];
-                            to = date_array[1]
-                            queryString = '?from=' + from + '&to=' + to + '&outbound=true';
-                            return false;
-                        }
-                    });
-                    if (from != null && to != null){
-                    var url = 'https://uat.aa-testing.com/cortana/export-n4' +  queryString;
-                        window.location.href = url;
-                    }
+                    $('#hidden_form_id').val('https://uat.aa-testing.com/cortana/export-n4');
+                    $('.popup-inner button').text('代理人數列表');
+                    $('.popup-window').fadeIn();
+                    // var queryString = '';
+                    // var from = null;
+                    // var to = null;
+                    // $('.o_facet_value').each(function(index, el) {
+                    //     var text = $(el).html().trim();
+                    //     console.log(text);
+                    //     if (text.startsWith('出發日期 is between')) {
+                    //         var raw_date = text.replace('出發日期 is between', '').replace('and', '-').replaceAll('"', '').replaceAll(' ', '');
+                    //         var date_array = raw_date.split('-');
+                    //         from = date_array[0];
+                    //         to = date_array[1]
+                    //         queryString = '?from=' + from + '&to=' + to + '&outbound=true';
+                    //         return false;
+                    //     }
+                    // });
+                    // if (from != null && to != null){
+                    // var url = 'https://uat.aa-testing.com/cortana/export-n4' +  queryString;
+                    //     window.location.href = url;
+                    // }
                 });
                 button_n5_outbound.on('click', function(e){
                     e.preventDefault();
-                    var queryString = '';
-                    var from = null;
-                    var to = null;
-                    $('.o_facet_value').each(function(index, el) {
-                        var text = $(el).html().trim();
-                        console.log(text);
-                        if (text.startsWith('出發日期 is between')) {
-                            var raw_date = text.replace('出發日期 is between', '').replace('and', '-').replaceAll('"', '').replaceAll(' ', '');
-                            var date_array = raw_date.split('-');
-                            from = date_array[0];
-                            to = date_array[1]
-                            queryString = '?from=' + from + '&to=' + to + '&outbound=true';
-                            return false;
-                        }
-                    });
-                    if (from != null && to != null){
-                    var url = 'https://uat.aa-testing.com/cortana/export-n5' +  queryString;
-                        window.location.href = url;
-                    }
+                    $('#hidden_form_id').val('https://uat.aa-testing.com/cortana/export-n5');
+                    $('.popup-inner button').text('代理摘要統計');
+                    $('.popup-window').fadeIn();
+                    // var queryString = '';
+                    // var from = null;
+                    // var to = null;
+                    // $('.o_facet_value').each(function(index, el) {
+                    //     var text = $(el).html().trim();
+                    //     console.log(text);
+                    //     if (text.startsWith('出發日期 is between')) {
+                    //         var raw_date = text.replace('出發日期 is between', '').replace('and', '-').replaceAll('"', '').replaceAll(' ', '');
+                    //         var date_array = raw_date.split('-');
+                    //         from = date_array[0];
+                    //         to = date_array[1]
+                    //         queryString = '?from=' + from + '&to=' + to + '&outbound=true';
+                    //         return false;
+                    //     }
+                    // });
+                    // if (from != null && to != null){
+                    // var url = 'https://uat.aa-testing.com/cortana/export-n5' +  queryString;
+                    //     window.location.href = url;
+                    // }
                 });
                 button_outbound_check.on('click', function(e){
                     e.preventDefault();
