@@ -250,12 +250,12 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                         margin: 0 auto;
                         margin-top: 10%;
                         background:rgba(255,255,255, 0.9);
-
+                        padding: 20px;
                     }
                 </style>
                 <div class="popup-window">
                     <div class="popup-inner">
-                        <input type="hidden" value>
+                        <input type="hidden" value="" id="hidden_form_id">
                         <div>
                             <div style="display:inline-block; width:29%">起始日期</div>
                             <div style="display:inline-block; width:70%"><input type="date" name="start_date"></div>
@@ -291,6 +291,16 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     {
                         $('.popup-window').fadeOut();
                     }
+                })
+                $('.popup-inner button').on('click', function(e){
+                    e.preventDefault();
+                    var start = $('[name="start_date"]').val();
+                    var end = $('[name="end_date"]').val();
+                    if (start && end){
+                        var url = 'https://uat.aa-testing.com/cortana/export-g' +  queryString;
+                        window.location.href = url;
+                    }
+                    
                 })
 
                 button_a.on('click', function(e){
@@ -351,6 +361,8 @@ odoo.define('cortana__export_button.listview_button', function (require) {
 
                 button_g.on('click', function(e){
                     e.preventDefault();
+                    $('#hidden_form_id').val('https://uat.aa-testing.com/cortana/export-g');
+                    $('.popup-inner button').text('送團列表');
                     $('.popup-window').fadeIn();
                     // var queryString = '';
                     // var date = null;
