@@ -105,6 +105,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
         }
         </style>
         `);
+        
     });
     $(document).on('click', '.cortana__export_l_button__button', function(e){
         e.preventDefault();
@@ -234,6 +235,24 @@ odoo.define('cortana__export_button.listview_button', function (require) {
         renderButtons: function() {
             this._super.apply(this, arguments);
             if (this.modelName === 'x_this_is_tour_123') { // Change model name
+                $('body').append(`
+                <style>
+                    .popup-window{
+                        display:none;
+                    }
+                </style>
+                <div class="popup-window">
+                    <div>
+                        <div style="display:inline-block; width:29%">起始日期</div>
+                        <div style="display:inline-block; width:70%"><input type="date" name="start_date"></div>
+                    </div>
+                    <div>
+                        <div style="display:inline-block; width:29%">結束日期</div>
+                        <div style="display:inline-block; width:70%"><input type="date" name="end_date"></div>
+                    </div>
+                    <button type="button">Export</button>
+                </div>`
+                );
                 var button = this.$buttons.find('button.cortana__export_button__button'); // Change button class
                 button.on('click', this.proxy('action'));
                 var button_a = this.$buttons.find('a.cortana__export_a_button__button');
@@ -327,19 +346,6 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     // var url = 'https://uat.aa-testing.com/cortana/export-g' +  queryString;
                     //     window.location.href = url;
                     // }
-                    $('body').append(`
-                    <div class="popup-window">
-                        <div>
-                            <div style="display:inline-block; width:29%">起始日期</div>
-                            <div style="display:inline-block; width:70%"><input type="date" name="start_date"></div>
-                        </div>
-                        <div>
-                            <div style="display:inline-block; width:29%">結束日期</div>
-                            <div style="display:inline-block; width:70%"><input type="date" name="end_date"></div>
-                        </div>
-                        <button type="button">Export</button>
-                    </div>`
-                    );
                 });
 
                 button_h.on('click', function(e){
