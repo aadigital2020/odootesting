@@ -728,6 +728,23 @@ odoo.define('cortana__export_button.listview_button', function (require) {
             });
         }
 
+        if (!view_type) {
+            var regex = /.*?view_type=(.*)/gm;
+            var str = window.location.href;
+            var m;
+            var view_type;
+
+            while ((m = regex.exec(str)) !== null) {
+                if (m.index === regex.lastIndex) {
+                    regex.lastIndex++;
+                }
+                
+                m.forEach((match, groupIndex) => {
+                    view_type = match;
+                });
+            }
+        }
+
         var regex = /.*?studio=(.*?)\#/gm;
         var str = window.location.href;
         var m;
