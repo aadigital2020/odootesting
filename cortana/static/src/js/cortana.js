@@ -246,9 +246,11 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                         background-color: rgba(0,0,0,0.1);
                     }
                     .popup-inner{
-                        margin-top: 10%;
                         max-width: 500px;
                         margin: 0 auto;
+                        margin-top: 10%;
+                        background:rgba(255,255,255, 0.9);
+
                     }
                 </style>
                 <div class="popup-window">
