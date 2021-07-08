@@ -336,7 +336,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     $('#hidden_form_id').val('https://uat.aa-testing.com/cortana/export');
                     $('.popup-inner button').text('每日日程表');
                     $('.popup-inner-2').hide();
-                    $('.popup-inner').hide();
+                    $('.popup-inner').show();
                     $('.popup-window').fadeIn();
                     // window.location.href='https://uat.aa-testing.com/cortana/export';
                 });
@@ -345,7 +345,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     $('#hidden_form_id').val('https://uat.aa-testing.com/cortana/export-b');
                     $('.popup-inner button').text('導遊日程表');
                     $('.popup-inner-2').hide();
-                    $('.popup-inner').hide();
+                    $('.popup-inner').show();
                     $('.popup-window').fadeIn();
                     // window.location.href='https://uat.aa-testing.com/cortana/export-b';
                 });
@@ -355,7 +355,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     $('#hidden_form_id').val('https://uat.aa-testing.com/cortana/export-c');
                     $('.popup-inner button').text('團隊日程表');
                     $('.popup-inner-2').hide();
-                    $('.popup-inner').hide();
+                    $('.popup-inner').show();
                     $('.popup-window').fadeIn();
                     // window.location.href='https://uat.aa-testing.com/cortana/export-c';
                     
@@ -366,7 +366,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     $('#hidden_form_id').val('https://uat.aa-testing.com/cortana/export-d');
                     $('.popup-inner button').text('簡易日程表');
                     $('.popup-inner-2').hide();
-                    $('.popup-inner').hide();
+                    $('.popup-inner').show();
                     $('.popup-window').fadeIn();
                     // window.location.href='https://uat.aa-testing.com/cortana/export-d';
                 });
@@ -412,7 +412,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     $('#hidden_form_id').val('https://uat.aa-testing.com/cortana/export-g');
                     $('.popup-inner button').text('送團列表');
                     $('.popup-inner-2').hide();
-                    $('.popup-inner').hide();
+                    $('.popup-inner').showshow();
                     $('.popup-window').fadeIn();
                     // var queryString = '';
                     // var date = null;
@@ -438,7 +438,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     $('#hidden_form_id').val('https://uat.aa-testing.com/cortana/export-h');
                     $('.popup-inner button').text('接團列表');
                     $('.popup-inner-2').hide();
-                    $('.popup-inner').hide();
+                    $('.popup-inner').show();
                     $('.popup-window').fadeIn();
                     // var queryString = '';
                     // var date = null;
@@ -521,7 +521,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     e.preventDefault();
                     $('#hidden_form_id').val('https://uat.aa-testing.com/cortana/export-n3');
                     $('.popup-inner').hide();
-                    $('.popup-inner-2').hide();
+                    $('.popup-inner-2').show();
                     $('.popup-inner-2 button').text('團隊人數列表');
                     $('.popup-window').fadeIn();
                     // var queryString = '';
@@ -548,7 +548,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     e.preventDefault();
                     $('#hidden_form_id').val('https://uat.aa-testing.com/cortana/export-n4');
                     $('.popup-inner').hide();
-                    $('.popup-inner-2').hide();
+                    $('.popup-inner-2').show();
                     $('.popup-inner-2 button').text('代理人數列表');
                     $('.popup-window').fadeIn();
                     // var queryString = '';
@@ -575,7 +575,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     e.preventDefault();
                     $('#hidden_form_id').val('https://uat.aa-testing.com/cortana/export-n5');
                     $('.popup-inner').hide();
-                    $('.popup-inner-2').hide();
+                    $('.popup-inner-2').show();
                     $('.popup-inner-2 button').text('代理摘要統計');
                     $('.popup-window').fadeIn();
                     // var queryString = '';
