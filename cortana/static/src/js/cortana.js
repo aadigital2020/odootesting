@@ -239,18 +239,31 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 <style>
                     .popup-window{
                         display:none;
+                        position: absolute;
+                        z-index: 1000;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0,0,0,0.1);
+                    }
+                    .popup-inner{
+                        margin-top: 10%;
+                        max-width: 500px;
+                        margin: 0 auto;
                     }
                 </style>
                 <div class="popup-window">
-                    <div>
-                        <div style="display:inline-block; width:29%">起始日期</div>
-                        <div style="display:inline-block; width:70%"><input type="date" name="start_date"></div>
+                    <div class="popup-inner">
+                        <input type="hidden" value>
+                        <div>
+                            <div style="display:inline-block; width:29%">起始日期</div>
+                            <div style="display:inline-block; width:70%"><input type="date" name="start_date"></div>
+                        </div>
+                        <div>
+                            <div style="display:inline-block; width:29%">結束日期</div>
+                            <div style="display:inline-block; width:70%"><input type="date" name="end_date"></div>
+                        </div>
+                        <button type="button" class="btn btn-primary">Export</button>
                     </div>
-                    <div>
-                        <div style="display:inline-block; width:29%">結束日期</div>
-                        <div style="display:inline-block; width:70%"><input type="date" name="end_date"></div>
-                    </div>
-                    <button type="button">Export</button>
                 </div>`
                 );
                 var button = this.$buttons.find('button.cortana__export_button__button'); // Change button class
@@ -270,6 +283,13 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 var button_n4_inbound = this.$buttons.find('button.cortana__export_n4_inbound_button__button');
                 var button_n5_inbound = this.$buttons.find('button.cortana__export_n5_inbound_button__button');
                 var button_inbound_check = this.$buttons.find('button.cortana__export_inbound_check_button__button');
+
+                $('.popup-window').on('click', function(e){
+                    if(e.target == this)
+                    {
+                        $('.popup-window').fadeOut();
+                    }
+                })
 
                 button_a.on('click', function(e){
                     e.preventDefault();
@@ -329,6 +349,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
 
                 button_g.on('click', function(e){
                     e.preventDefault();
+                    $('.popup-window').fadeOut();
                     // var queryString = '';
                     // var date = null;
                     // $('.o_facet_value').each(function(index, el) {
