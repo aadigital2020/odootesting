@@ -59,8 +59,8 @@ var cortana_preview_button_event_handler = function(e) {
 }
 
 $(function() {
-    $('body').on('change', '[name="x_studio__12"], [name="x_studio__14"], [name="x_studio__15"]', function() {
-        var total = parseInt($('[name="x_studio__12"]').val()) + parseInt($('[name="x_studio__14"]').val()) + parseInt($('[name="x_studio__15"]').val());
+    $('body').on('change', '[name="x_studio__12"], [name="x_studio__14"], [name="x_studio__15"], [name="x_studio__16"]', function() {
+        var total = parseInt($('[name="x_studio__12"]').val()) + parseInt($('[name="x_studio__14"]').val()) + parseInt($('[name="x_studio__15"]').val()) + parseInt($('[name="x_studio__16"]').val());
         $('[name="x_studio__13"]').val(total);
         $('[name="x_studio__13"]').change();
     })
