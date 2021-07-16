@@ -424,7 +424,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                     $('#hidden_form_id').val('https://uat.aa-testing.com/cortana/export-g');
                     $('.popup-inner button').text('送團列表');
                     $('.popup-inner-2').hide();
-                    $('.popup-inner').showshow();
+                    $('.popup-inner').show();
                     $('.popup-window').fadeIn();
                     // var queryString = '';
                     // var date = null;
