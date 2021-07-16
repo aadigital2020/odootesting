@@ -14,7 +14,7 @@
                         <a href="#" class="dropdown-item cortana__export_a_button__button">每日日程表</a>
                         <a href="#" class="dropdown-item cortana__export_b_button__button">導遊日程表</a>
                         <a href="#" class="dropdown-item cortana__export_c_button__button">團隊日程表</a>
-                        <a href="#" class="dropdown-item cortana__export_d_button__button">簡易日程表</a>
+                        <!-- <a href="#" class="dropdown-item cortana__export_d_button__button">簡易日程表</a> -->
                     </div>
                 </div>
                 <div class="dropdown" style="display:inline-block;">
