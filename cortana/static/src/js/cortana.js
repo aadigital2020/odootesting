@@ -109,10 +109,10 @@ odoo.define('cortana__export_button.listview_button', function (require) {
         html[data-app-model="x_in_bound_tour"][data-app-view-type="list"][data-app-studio="ok"] td:nth-child(14) {
             background-color: #fbc8d5;
         }
-        html[data-app-model="x_in_bound_tour"][data-app-view-type="list"][data-app-studio="ok"] th:nth-child(15),
-        html[data-app-model="x_in_bound_tour"][data-app-view-type="list"][data-app-studio="ok"] th:nth-child(15),
+        html[data-app-model="x_in_bound_tour"][data-app-view-type="list"][data-app-studio="ok"] th:nth-child(16),
+        html[data-app-model="x_in_bound_tour"][data-app-view-type="list"][data-app-studio="ok"] th:nth-child(17),
         html[data-app-model="x_in_bound_tour"][data-app-view-type="list"][data-app-studio="ok"] td:nth-child(16),
-        html[data-app-model="x_in_bound_tour"][data-app-view-type="list"][data-app-studio="ok"] td:nth-child(16) {
+        html[data-app-model="x_in_bound_tour"][data-app-view-type="list"][data-app-studio="ok"] td:nth-child(17) {
             background-color: #c8e5c7;
         }
         </style>
