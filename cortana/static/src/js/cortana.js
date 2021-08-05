@@ -307,6 +307,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 var button_i = this.$buttons.find('button.cortana__export_i_button__button');
                 var button_j = this.$buttons.find('a.cortana__export_j_button__button');
                 var button_k = this.$buttons.find('a.cortana__export_k_button__button');
+                var button_ppp = this.$buttons.find('a.cortana__export_ppp_button__button');
                 var button_n3_inbound = this.$buttons.find('button.cortana__export_n3_inbound_button__button');
                 var button_n4_inbound = this.$buttons.find('button.cortana__export_n4_inbound_button__button');
                 var button_n5_inbound = this.$buttons.find('button.cortana__export_n5_inbound_button__button');
@@ -516,6 +517,26 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                         select_id.push($(this).closest('tr').attr('data-model-id'));
                     });
                     var url = 'https://uat.aa-testing.com/cortana/export-k?id_array=[';
+                    if(select_id && select_id.length > 0)
+                    {
+                        // str_arr = JSON.stringify(select_id);
+                        // window.location.href = url + str_arr;
+                        var new_url = '';
+                        for(var i = 0; i < select_id.length; i++){
+                            
+                            new_url = url+select_id[i]+']';
+                            window.open(new_url);
+                        }
+                    }
+                });
+                button_ppp.on('click', function(e){
+                    e.preventDefault();
+                    var select_id = [];
+                    var str_arr = '';
+                    $('tbody input:checked').each(function(){
+                        select_id.push($(this).closest('tr').attr('data-model-id'));
+                    });
+                    var url = 'https://uat.aa-testing.com/cortana/demo2?id_array=[';
                     if(select_id && select_id.length > 0)
                     {
                         // str_arr = JSON.stringify(select_id);
