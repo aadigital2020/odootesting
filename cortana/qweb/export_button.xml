@@ -47,7 +47,7 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton_e">
                         <a href="#" class="dropdown-item cortana__export_j_button__button">TIC確認書</a>
                         <a href="#" class="dropdown-item cortana__export_k_button__button">TIC行程表</a>
-                        <a href="#" class="dropdown-item cortana__export_ppp_button__button">abc</a>
+                        <a href="#" class="dropdown-item cortana__export_p1_button__button">P1</a>
                     </div>
                     <button type="button" class="btn btn-primary cortana__export_n3_inbound_button__button">
                         團隊人數列表
