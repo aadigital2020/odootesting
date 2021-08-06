@@ -47,7 +47,10 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton_e">
                         <a href="#" class="dropdown-item cortana__export_j_button__button">TIC確認書</a>
                         <a href="#" class="dropdown-item cortana__export_k_button__button">TIC行程表</a>
-                        <a href="#" class="dropdown-item cortana__export_p1_button__button">P1</a>
+                        <a href="#" class="dropdown-item cortana__export_p1_button__button">TIC除深圳外包含登記店鋪行程確認書</a>
+                        <a href="#" class="dropdown-item cortana__export_p2_button__button">TIC深圳不包含登記店鋪行程確認書</a>
+                        <a href="#" class="dropdown-item cortana__export_p3_button__button">TIC除深圳外不包含登記店鋪行程確認書</a>
+                        <a href="#" class="dropdown-item cortana__export_p4_button__button">TIC港珠澳一天購物團確認書</a>
                     </div>
                     <button type="button" class="btn btn-primary cortana__export_n3_inbound_button__button">
                         團隊人數列表
