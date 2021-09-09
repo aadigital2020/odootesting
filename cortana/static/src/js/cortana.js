@@ -1051,7 +1051,7 @@ $(function() {
         $(this).addClass('is-active');
 
         $('<div class="hotel-dashboard-container"></div>').insertAfter('.o_action_manager');
-        var base_url = 'https://uat.aa-testing.com/cortana/hotel-dashboard-inner/?day=' + day;
+        var base_url = 'https://uat.aa-testing.com/cortana/hotel-dashboard-inner?day=' + day;
         $.get(base_url, function(data) {
             $('.hotel-dashboard-container .hColRight').html(data.html);
         })
