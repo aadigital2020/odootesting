@@ -1023,7 +1023,7 @@ $(function() {
         var params = Object.fromEntries(urlSearchParams.entries());
 
         if (result.model === 'x_hotel01' && result.view_type === 'list' && params.studio == undefined) {
-            if (!hotelDashboardIsShown) {
+            if (!hotelDashboardIsShown && $('.o_action_manager').length) {
                 hotelDashboardIsShown = true;
                 $('.hotel-dashboard-container').remove();
                 if ($('.hotel-dashboard-container').length === 0) {
