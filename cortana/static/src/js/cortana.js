@@ -1012,7 +1012,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 hotelDashboardIsShown = true;
                 $('.hotel-dashboard-container').remove();
                 if ($('.hotel-dashboard-container').length === 0) {
-                    $('body').append('<div class="hotel-dashboard-container"></div>');
+                    $('<div class="hotel-dashboard-container"></div>').insertAfter('.o_action_manager');
                     var base_url = 'https://uat.aa-testing.com/cortana/hotel-dashboard';
                     $.get(base_url, function(data) {
                         $('.hotel-dashboard-container').html(data.html);
