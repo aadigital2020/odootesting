@@ -992,8 +992,6 @@ odoo.define('cortana__export_button.listview_button', function (require) {
         }
     });
 
-    var hotelDashboardIsShown = false;
-
     setInterval(function() {
         var hash = window.location.hash.substr(1);
         var result = hash.split('&').reduce(function (res, item) {
@@ -1011,6 +1009,8 @@ odoo.define('cortana__export_button.listview_button', function (require) {
 
 $(function() {
     console.log('aaa');
+    var hotelDashboardIsShown = false;
+
     setInterval(function() {
         var hash = window.location.hash.substr(1);
         var result = hash.split('&').reduce(function (res, item) {
