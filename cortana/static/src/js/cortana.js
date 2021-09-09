@@ -1013,10 +1013,15 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 $('.hotel-dashboard-container').remove();
                 if ($('.hotel-dashboard-container').length === 0) {
                     $('body').append('<div class="hotel-dashboard-container"></div>');
+                    var base_url = 'https://uat.aa-testing.com/cortana/hotel-dashboard';
+                    $.get(base_url, function(data) {
+                        $('.hotel-dashboard-container').html(data.html);
+                    })
                 }
             }
         } else {
             $('.hotel-dashboard-container').remove();
+            hotelDashboardIsShown = false;
         }
     }, 1);
 });
