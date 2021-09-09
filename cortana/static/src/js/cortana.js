@@ -1031,6 +1031,8 @@ $(function() {
                     var base_url = 'https://uat.aa-testing.com/cortana/hotel-dashboard';
                     $.get(base_url, function(data) {
                         $('.hotel-dashboard-container').html(data.html);
+                        var today = new Date().toJSON().slice(0,10).replace(/-/g,'-');
+                        $('.hColLeft').scrollTop($('[data-day="' + today + '"]').position().top - 23);
                     })
                 }
             }
