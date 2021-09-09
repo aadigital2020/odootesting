@@ -992,6 +992,8 @@ odoo.define('cortana__export_button.listview_button', function (require) {
         }
     });
 
+    var hotelDashboardIsShown = false;
+
     setInterval(function() {
         var hash = window.location.hash.substr(1);
         var result = hash.split('&').reduce(function (res, item) {
@@ -1005,11 +1007,16 @@ odoo.define('cortana__export_button.listview_button', function (require) {
 
         $('html').attr('data-app-model', result.model).attr('data-app-view-type', result.view_type).attr('data-app-studio', params.studio == undefined ? 'ok' : params.studio);
 
-        console.log(result.model);
-        console.log(result.view_type);
-        console.log(params.studio == undefined);
         if (result.model === 'x_hotel01' && result.view_type === 'list' && params.studio == undefined) {
-            console.log('Yes');
+            if (!hotelDashboardIsShown) {
+                hotelDashboardIsShown = true;
+                $('.hotel-dashboard-container').remove();
+                if ($('.hotel-dashboard-container').length === 0) {
+                    $('body').append('<div class="hotel-dashboard-container"></div>');
+                }
+            }
+        } else {
+            $('.hotel-dashboard-container').remove();
         }
     }, 1);
 });
