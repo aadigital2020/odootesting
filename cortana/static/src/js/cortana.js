@@ -1004,5 +1004,12 @@ odoo.define('cortana__export_button.listview_button', function (require) {
         var params = Object.fromEntries(urlSearchParams.entries());
 
         $('html').attr('data-app-model', result.model).attr('data-app-view-type', result.view_type).attr('data-app-studio', params.studio == undefined ? 'ok' : params.studio);
+
+        console.log(result.model);
+        console.log(result.view_type);
+        console.log(params.studio == undefined);
+        if (result.model === 'x_hotel01' && result.view_type === 'list' && params.studio == undefined) {
+            console.log('Yes');
+        }
     }, 1);
 });
