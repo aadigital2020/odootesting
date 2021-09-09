@@ -1,3 +1,44 @@
+var loadingHTML = `
+<style>
+.lds-ring {
+    display: block;
+    position: relative;
+    margin: 15px auto;
+    width: 30px;
+    height: 30px;
+}
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #875A7B transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+</style>
+<div class="lds-ring"><div></div><div></div><div></div><div></div></div>`;
+
 var append_preview_container = function() {
     $('.cortana-preview-container').remove();
     if ($('.cortana-preview-container').length === 0) {
@@ -10,46 +51,7 @@ var cortana_preview_button_event_handler = function(e) {
     e.stopPropagation();
 
     append_preview_container();
-    $('.cortana-preview-container').html(`
-    <style>
-    .lds-ring {
-        display: block;
-        position: relative;
-        margin: 15px auto;
-        width: 30px;
-        height: 30px;
-    }
-    .lds-ring div {
-        box-sizing: border-box;
-        display: block;
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        margin: 0;
-        border: 3px solid #fff;
-        border-radius: 50%;
-        animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-        border-color: #875A7B transparent transparent transparent;
-    }
-    .lds-ring div:nth-child(1) {
-        animation-delay: -0.45s;
-    }
-    .lds-ring div:nth-child(2) {
-        animation-delay: -0.3s;
-    }
-    .lds-ring div:nth-child(3) {
-        animation-delay: -0.15s;
-    }
-    @keyframes lds-ring {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-    }
-    </style>
-    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>`);
+    $('.cortana-preview-container').html(loadingHTML);
 
     var id = $(this).closest('[data-model-id]').attr('data-model-id');
     var base_url = $(this).closest('[data-cortana-preview-base-url]').attr('data-cortana-preview-base-url');
@@ -1028,6 +1030,7 @@ $(function() {
                 $('.hotel-dashboard-container').remove();
                 if ($('.hotel-dashboard-container').length === 0) {
                     $('<div class="hotel-dashboard-container"></div>').insertAfter('.o_action_manager');
+                    $('.hotel-dashboard-container').html(loadingHTML);
                     var base_url = 'https://uat.aa-testing.com/cortana/hotel-dashboard';
                     $.get(base_url, function(data) {
                         $('.hotel-dashboard-container').html(data.html);
@@ -1053,6 +1056,7 @@ $(function() {
         $(this).addClass('is-active');
 
         $('<div class="hotel-dashboard-container"></div>').insertAfter('.o_action_manager');
+        $('.hotel-dashboard-container .hColRight').html(loadingHTML);
         var base_url = 'https://uat.aa-testing.com/cortana/hotel-dashboard-inner?day=' + day;
         $.get(base_url, function(data) {
             $('.hotel-dashboard-container .hColRight').html(data.html);
