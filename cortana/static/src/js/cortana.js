@@ -1032,7 +1032,9 @@ $(function() {
                     $.get(base_url, function(data) {
                         $('.hotel-dashboard-container').html(data.html);
                         var today = new Date().toJSON().slice(0,10).replace(/-/g,'-');
-                        $('.hColLeft').scrollTop($('[data-day="' + today + '"]').position().top - 23);
+                        if ($('[data-day="' + today + '"]').length) {
+                            $('.hColLeft').scrollTop($('[data-day="' + today + '"]').position().top - 23);
+                        }
                     })
                 }
             }
