@@ -65,6 +65,9 @@
                 <button type="button" class="btn btn-primary cortana__export_inbound_check_button__button" >
                     行政速查
                 </button>
+                <button type="button" class="btn btn-primary cortana__export_people_button__button" >
+                    出境團名單
+                </button>
             </t>
         </t>
     </t>
