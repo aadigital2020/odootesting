@@ -969,7 +969,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                         select_id.push($(this).closest('tr').attr('data-model-id'));
                     });
                     var url = 'https://uat.aa-testing.com/cortana/export-people?id_array=[';
-                    new_url = url + select_ids.join(',') + ']';
+                    new_url = url + select_id.join(',') + ']';
                     window.open(new_url);
                 });
             }
