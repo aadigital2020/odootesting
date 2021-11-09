@@ -712,13 +712,21 @@ odoo.define('cortana__export_button.listview_button', function (require) {
                 button_people.on('click', function(e){
                     e.preventDefault();
                     var select_id = [];
+                    var str_arr = '';
                     $('tbody input:checked').each(function(){
                         select_id.push($(this).closest('tr').attr('data-model-id'));
                     });
-                    var url = 'https://uat.aa-testing.com/cortana/export-people/';
+                    var url = 'https://uat.aa-testing.com/cortana/export-people?id_array=[';
                     if(select_id && select_id.length > 0)
                     {
-                        window.location.href = url + select_id[0];
+                        // str_arr = JSON.stringify(select_id);
+                        // window.location.href = url + str_arr;
+                        var new_url = '';
+                        for(var i = 0; i < select_id.length; i++){
+                            
+                            new_url = url+select_id[i]+']';
+                            window.open(new_url);
+                        }
                     }
                 });
 
