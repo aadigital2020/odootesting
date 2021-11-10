@@ -131,4 +131,13 @@
             </t>
         </t>
     </t>
+    <t t-extend="FormView.buttons">
+        <t t-jquery="div.o_form_buttons_view" t-operation="append">
+            <t t-if = "widget.modelName == 'sale.order'">
+                <button type="button" class="btn btn-primary cortana__exportwotic_button__button" >
+                    旅客收據
+                </button>            
+            </t>
+        </t>
+    </t>
 </templates>
