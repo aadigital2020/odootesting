@@ -1097,11 +1097,12 @@ $(function() {
         var id = $(this).closest('[data-id]').attr('data-id').replace('sale.order_', ''); 
         var url = 'https://uat.aa-testing.com/cortana/export-1-with/' +  id;
         window.open(url, '_blank');
-        setTimeout(function() { $('[data-dismiss="modal"]').trigger('click');}, 0);
-        setTimeout(function() { $('[data-dismiss="modal"]').trigger('click');}, 250);
-        setTimeout(function() { $('[data-dismiss="modal"]').trigger('click');}, 500);
-        setTimeout(function() { $('[data-dismiss="modal"]').trigger('click');}, 750);
-        setTimeout(function() { $('[data-dismiss="modal"]').trigger('click');}, 1000);
+        var inter = setInterval(function() {
+            if ($('body').hasClass('modal-open')) {
+                $('[data-dismiss="modal"]').trigger('click');
+                clearInterval(inter);
+            }
+        }, 1)
     })
 
     $('body').on('click', '.export-receipt-button-without-tic', function(e) {
@@ -1109,10 +1110,11 @@ $(function() {
         var id = $(this).closest('[data-id]').attr('data-id').replace('sale.order_', ''); 
         var url = 'https://uat.aa-testing.com/cortana/export-1-without/' +  id;
         window.open(url, '_blank');
-        setTimeout(function() { $('[data-dismiss="modal"]').trigger('click');}, 0);
-        setTimeout(function() { $('[data-dismiss="modal"]').trigger('click');}, 250);
-        setTimeout(function() { $('[data-dismiss="modal"]').trigger('click');}, 500);
-        setTimeout(function() { $('[data-dismiss="modal"]').trigger('click');}, 750);
-        setTimeout(function() { $('[data-dismiss="modal"]').trigger('click');}, 1000);
+        var inter = setInterval(function() {
+            if ($('body').hasClass('modal-open')) {
+                $('[data-dismiss="modal"]').trigger('click');
+                clearInterval(inter);
+            }
+        }, 1)
     })
 })
