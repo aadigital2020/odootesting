@@ -1059,14 +1059,14 @@ $(function() {
         }
 
         if (result.model === 'x_in_bound_tour' && result.view_type === 'form' && params.studio == undefined) {
-            if (!$('[data-id^="sale.order_"]').closest('.o_list_table').find('tr th.export-receipt-header').length) {
+            if (!$('[data-id^="sale.order_"]').closest('.o_list_table').find('thead tr th.export-receipt-header').length) {
                 $('body').append(`<style>
                     .export-receipt-header,
                     .export-receipt {
                         width: 100px !important;
                     }
                 </style>`)
-                $('[data-id^="sale.order_"]').closest('.o_list_table').find('tr').append('<th class="export-receipt-header"]></th><th class="export-receipt-header"]></th>');
+                $('[data-id^="sale.order_"]').closest('.o_list_table').find('thead tr').append('<th class="export-receipt-header"></th><th class="export-receipt-header"></th>');
             }
             $('[data-id^="sale.order_"]').each(function(index, el) {
                 if (!$(el).find('td.export-receipt').length) {
