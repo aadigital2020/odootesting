@@ -1099,8 +1099,10 @@ $(function() {
         window.open(url, '_blank');
         var inter = setInterval(function() {
             if ($('body').hasClass('modal-open')) {
+                $('.modal').css('opacity', 0);
                 $('[data-dismiss="modal"]').trigger('click');
                 clearInterval(inter);
+                $('.modal').css('opacity', 1);
             }
         }, 1)
     })
@@ -1112,6 +1114,7 @@ $(function() {
         window.open(url, '_blank');
         var inter = setInterval(function() {
             if ($('body').hasClass('modal-open')) {
+                $('.modal')
                 $('[data-dismiss="modal"]').trigger('click');
                 clearInterval(inter);
             }
