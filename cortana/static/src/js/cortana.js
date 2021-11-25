@@ -1066,11 +1066,11 @@ $(function() {
                         width: 100px !important;
                     }
                 </style>`)
-                $('[data-id^="sale.order_"]').closest('.o_list_table').find('thead tr').append('<th class="export-receipt-header"></th><th class="export-receipt-header"></th>');
+                $('[data-id^="sale.order_"]').closest('.o_list_table').find('thead tr').append('<th class="export-receipt-header">旅客收據</th><th class="export-receipt-header"></th>');
             }
             $('[data-id^="sale.order_"]').each(function(index, el) {
                 if (!$(el).find('td.export-receipt').length) {
-                    $(el).append('<td class="export-receipt"><button type="button" class="btn btn-primary export-receipt-button-without-tic">旅客收據</button></td><td class="export-receipt"><button type="button" class="btn btn-primary export-receipt-button-with-tic">旅客收據</button></td>');
+                    $(el).append('<td class="export-receipt"><button type="button" class="btn btn-primary export-receipt-button-without-tic">w/o TIC</button></td><td class="export-receipt"><button type="button" class="btn btn-primary export-receipt-button-with-tic">w/ TIC</button></td>');
                 }
             })
         }
@@ -1091,4 +1091,16 @@ $(function() {
             $('.hotel-dashboard-container .hColRight').html(data.html);
         })
     });
+
+    $('body').on('click', '.export-receipt-button-with-tic', function(e) {
+        var id = $(this).closest('data-id').replace('sale.order_', ''); 
+        var url = 'https://uat.aa-testing.com/cortana/export-1-with/' +  id;
+        window.open(url, '_blank');
+    })
+
+    $('body').on('click', '.export-receipt-button-without-tic', function(e) {
+        var id = $(this).closest('data-id').replace('sale.order_', ''); 
+        var url = 'https://uat.aa-testing.com/cortana/export-1-without/' +  id;
+        window.open(url, '_blank');
+    })
 })
