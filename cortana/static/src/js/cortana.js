@@ -1102,9 +1102,9 @@ $(function() {
                 $('.modal').css('opacity', 0);
                 $('[data-dismiss="modal"]').trigger('click');
                 clearInterval(inter);
-                setTimeout(function() {
-                    $('.modal').css('opacity', 1);
-                }, 1000);
+                // setTimeout(function() {
+                //     $('.modal').css('opacity', 1);
+                // }, 1000);
             }
         }, 1)
     })
@@ -1119,9 +1119,9 @@ $(function() {
                 $('.modal').css('opacity', 0);
                 $('[data-dismiss="modal"]').trigger('click');
                 clearInterval(inter);
-                setTimeout(function() {
-                    $('.modal').css('opacity', 1);
-                }, 1000);
+                // setTimeout(function() {
+                //     $('.modal').css('opacity', 1);
+                // }, 1000);
             }
         }, 1)
     })
