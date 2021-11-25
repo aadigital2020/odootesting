@@ -1094,7 +1094,7 @@ $(function() {
 
     $('body').on('click', '.export-receipt-button-with-tic', function(e) {
         e.preventDefault();
-        var id = $(this).closest('[data-id]').attr('data-id').replace('sale.order_', ''); 
+        var id = $(this).closest('[data-id]').find('> td:first-child').html(); 
         var url = 'https://uat.aa-testing.com/cortana/export-1-with/' +  id;
         window.open(url, '_blank');
         var inter = setInterval(function() {
@@ -1109,7 +1109,7 @@ $(function() {
 
     $('body').on('click', '.export-receipt-button-without-tic', function(e) {
         e.preventDefault();
-        var id = $(this).closest('[data-id]').attr('data-id').replace('sale.order_', ''); 
+        var id = $(this).closest('[data-id]').find('> td:first-child').html(); 
         var url = 'https://uat.aa-testing.com/cortana/export-1-without/' +  id;
         window.open(url, '_blank');
         var inter = setInterval(function() {
