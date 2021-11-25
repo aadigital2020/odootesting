@@ -1057,6 +1057,14 @@ $(function() {
             $('.hotel-dashboard-container').remove();
             hotelDashboardIsShown = false;
         }
+
+        if (result.model === 'x_in_bound_tour' && result.view_type === 'form' && params.studio == undefined) {
+            $('[data-id^="sale.order_"]').each(function(index, el) {
+                if (!$(el).find('th.export-receipt').length) {
+                    $(el).append('<th class="export-receipt"><button type="button" class="btn btn-primary export-receipt-button-without-tic">旅客收據</button></th><th class="export-receipt"><button type="button" class="btn btn-primary export-receipt-button-with-tic">旅客收據</button></th>');
+                }
+            })
+        }
     }, 1);
 
     $('body').on('click', '[data-day]', function(e) {
