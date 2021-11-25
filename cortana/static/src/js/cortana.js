@@ -1059,6 +1059,9 @@ $(function() {
         }
 
         if (result.model === 'x_in_bound_tour' && result.view_type === 'form' && params.studio == undefined) {
+            if (!$('[data-id^="sale.order_"]').closest('.o_list_table').find('tr th.export-receipt-header').length) {
+                $('[data-id^="sale.order_"]').closest('.o_list_table').find('tr').append('<th class="export-receipt-header"></th>');
+            }
             $('[data-id^="sale.order_"]').each(function(index, el) {
                 if (!$(el).find('td.export-receipt').length) {
                     $(el).append('<td class="export-receipt" style="width: 100px;"><button type="button" class="btn btn-primary export-receipt-button-without-tic">旅客收據</button></td><td class="export-receipt" style="width: 100px;"><button type="button" class="btn btn-primary export-receipt-button-with-tic">旅客收據</button></td>');
