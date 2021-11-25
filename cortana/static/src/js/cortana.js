@@ -165,7 +165,7 @@ odoo.define('cortana__export_button.listview_button', function (require) {
         console.log(params);
 
         var url = 'https://uat.aa-testing.com/cortana/export-1/' +  params['id'];
-        window.location.href = url;
+        window.open(url);
     });
     $(document).on('click', '.cortana__export_2_button__button', function(e){
         e.preventDefault();
