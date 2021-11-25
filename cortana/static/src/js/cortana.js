@@ -1093,13 +1093,15 @@ $(function() {
     });
 
     $('body').on('click', '.export-receipt-button-with-tic', function(e) {
-        var id = $(this).closest('data-id').replace('sale.order_', ''); 
+        e.preventDefault();
+        var id = $(this).closest('[data-id]').attr('data-id').replace('sale.order_', ''); 
         var url = 'https://uat.aa-testing.com/cortana/export-1-with/' +  id;
         window.open(url, '_blank');
     })
 
     $('body').on('click', '.export-receipt-button-without-tic', function(e) {
-        var id = $(this).closest('data-id').replace('sale.order_', ''); 
+        e.preventDefault();
+        var id = $(this).closest('[data-id]').attr('data-id').replace('sale.order_', ''); 
         var url = 'https://uat.aa-testing.com/cortana/export-1-without/' +  id;
         window.open(url, '_blank');
     })
